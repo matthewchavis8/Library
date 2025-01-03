@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -8,10 +7,12 @@ import { Book } from "./types";
 
 const Carousel: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "center",
+    containScroll: "trimSnaps",
+  });
   const [selectedIndex, setSelectedIndex] = useState(0);
-
-
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -19,9 +20,7 @@ const Carousel: React.FC = () => {
     const fetchBooks = async () => {
       try {
         const res = await fetch("/books.json");
-        if (!res.ok) {
-          throw new Error("Error fetching data");
-        }
+        if (!res.ok) throw new Error("Error fetching data");
         const data: Book[] = await res.json();
         setBooks(data);
         setIsLoading(false);
@@ -31,21 +30,16 @@ const Carousel: React.FC = () => {
         setIsLoading(false);
       }
     };
-
     fetchBooks();
   }, []);
 
-
   useEffect(() => {
     if (!emblaApi) return;
-
     const onSelect = () => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
     };
-
     emblaApi.on("select", onSelect);
     onSelect();
-
     return () => {
       emblaApi.off("select", onSelect);
     };
@@ -59,52 +53,41 @@ const Carousel: React.FC = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  
-  if (isLoading) {
-    return <div className="text-center text-white">Loading...</div>;
-  }
-
-  if (error) {
+  if (isLoading) return <div className="text-center">Loading...</div>;
+  if (error)
     return <div className="text-center text-red-500">Error: {error}</div>;
-  }
 
   return (
-    <div className="my-8">
-     
+    <div className="w-full px-4 sm:px-6 mx-auto max-w-screen-xl">
       <div className="flex justify-center mb-4">
-        <p className="text-3xl " style={{ fontFamily: "Montserrat" }}>
+        <p className="text-xl sm:text-2xl md:text-3xl font-montserrat">
           Books Read Since 2023
         </p>
       </div>
 
-   
-      <div className="relative max-w-4xl mx-auto" aria-label="Books Carousel">
-       
+      <div className="relative mx-auto" aria-label="Books Carousel">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
+          <div className="flex -ml-4">
             {books.map((book, index) => (
               <div
-                className="flex-shrink-0 w-80 mx-2" 
+                className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_50%] md:flex-[0_0_33.333%]"
                 key={book.ID}
-                
               >
-                <div className="rounded overflow-hidden shadow-lg bg-gray-800 flex flex-col h-full">
-                 
-                  <div className="relative w-full h-80"> 
+                <div className="h-full rounded overflow-hidden shadow-lg bg-gray-800">
+                  <div className="relative pt-[133%]">
                     <Image
                       src={book.image}
                       alt={book.title}
-                      layout="fill"
-                      objectFit="" 
-                      className=""
-                      priority={index < 3} 
+                      fill
+                      className="rounded-t object-cover"
+                      priority={index < 3}
                     />
                   </div>
-                  <div className="px-6 py-4 flex-1 flex flex-col justify-center">
-                    <div className="font-bold text-xl mb-2 text-center text-white">
+                  <div className="p-4">
+                    <h3 className="font-bold text-base sm:text-lg mb-2 text-center text-white line-clamp-2">
                       {book.title}
-                    </div>
-                    <p className="text-gray-300 text-center mt-2">
+                    </h3>
+                    <p className="text-gray-300 text-center text-sm sm:text-base">
                       {book.author}
                     </p>
                   </div>
@@ -114,20 +97,19 @@ const Carousel: React.FC = () => {
           </div>
         </div>
 
-       
         <button
           onClick={scrollPrev}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-white"
+          className="absolute left-1 sm:left-2 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700/80 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-white z-10"
           aria-label="Previous Slide"
         >
-          <ChevronLeft className="w-6 h-6 text-white" />
+          <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
         </button>
         <button
           onClick={scrollNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-white"
+          className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700/80 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-white z-10"
           aria-label="Next Slide"
         >
-          <ChevronRight className="w-6 h-6 text-white" />
+          <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
         </button>
       </div>
 
@@ -135,13 +117,13 @@ const Carousel: React.FC = () => {
         {books.map((_, index) => (
           <button
             key={index}
-            onClick={() => emblaApi && emblaApi.scrollTo(index)}
+            onClick={() => emblaApi?.scrollTo(index)}
             className={clsx(
-              "w-3 h-3 mx-1 rounded-full focus:outline-none focus:ring-2 focus:ring-white",
+              "w-2 h-2 sm:w-3 sm:h-3 mx-1 rounded-full focus:outline-none focus:ring-2 focus:ring-white",
               selectedIndex === index ? "bg-white" : "bg-gray-400"
             )}
             aria-label={`Go to slide ${index + 1}`}
-          ></button>
+          />
         ))}
       </div>
     </div>
