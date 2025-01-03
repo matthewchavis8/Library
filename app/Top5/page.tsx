@@ -95,7 +95,7 @@ export default function Page() {
                   </div>
 
                 
-                  <div className="card-body">
+                  <div className="card-body bg-white">
                     <h1 className="text-2xl text-gray-700">#{index + 1}</h1>
                     <h2 className="card-title">{book.title}</h2>
                     <p className="text-sm text-gray-700 italic">
