@@ -24,7 +24,7 @@ export default function RootLayout({
         <div
           className="flex-grow bg-scroll bg-center bg-no-repeat bg-cover"
           style={{
-            backgroundImage: "url('/images/library-backgroundimage.jpg')",
+            backgroundImage: "url('/library-backgroundimage.jpg')",
           }}
         >
          
