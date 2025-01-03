@@ -121,7 +121,7 @@
   },
   {
     "ID": "13",
-    "image": "/Images/dune.jpg",
+    "image": "/Images/dunwich.jpg",
     "title": "The Dunwich Horror",
     "author": "H.P. Lovecraft",
     "description": "The Dunwich Horror is the story of the Whateleys and its relation to the Dunwich Horror, which happened in Dunwich, Massachusetts in 1928. The narrator is an unnamed third person narrator. The story begins with the explanation that the Dunwich Horror was covered up by the town.",
@@ -211,7 +211,7 @@
   },
   {
     "ID": "22",
-    "image": "/Images/dune.jpg",
+    "image": "/Images/dune.jpeg",
     "title": "Dune",
     "author": "Frank Herbert",
     "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad'Dib. He would avenge the traitorous plot against his noble family—and would bring to fruition humankind's most ancient and unattainable dream.",
@@ -298,5 +298,15 @@
     "genre": "Sci Fi",
     "publishDate": "1959",
     "pages": "280"
+  },
+  {
+    "ID": "31",
+    "image": "/Images/BloodMeridian.jpeg",
+    "title": "Blood Meridian",
+    "author": "Cormac Mc Carthy",
+    "description": "Based on historical events that took place on the Texas-Mexico border in the mid-19th century, Blood Meridian traces the fortunes of the Kid, a sixteen-year-old Tennessean who stumbles into the nightmarish world where aboriginal Americans are being murdered and the market for their scalps is thriving.",
+    "genre": "Fiction",
+    "publishDate": "1985",
+    "pages": "384"
   }
 ]

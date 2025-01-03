@@ -1,4 +1,6 @@
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+"use client";
+
+import { Book, Home, Menu, Sunset, Trees, Trophy, Zap } from "lucide-react";
 import { BsBookHalf } from "react-icons/bs";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -33,19 +35,19 @@ const subMenuItemsOne = [
     title: "Home",
     description: "The latest industry news, updates, and info",
     link: "/",
-    icon: <Book className="size-5 shrink-0" />,
+    icon: <Home className="size-5 shrink-0" />,
   },
   {
     title: "Books",
     description: "Our mission is to innovate and empower the world",
     link: "/Books",
-    icon: <Trees className="size-5 shrink-0" />,
+    icon: <Book className="size-5 shrink-0" />,
   },
   {
     title: "Top 5",
     description: "Browse job listing and discover our workspace",
     link: "/Top5",
-    icon: <Sunset className="size-5 shrink-0" />,
+    icon: <Trophy className="size-5 shrink-0" />,
   },
 ];
 
@@ -76,8 +78,10 @@ const Navbar = () => {
   return (
     <section className="py-4">
       <div className="container">
+        {/* Desktop Navigation */}
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center justify-between w-full">
+            {/* Left Section: Catalogue */}
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
@@ -87,28 +91,26 @@ const Navbar = () => {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="w-80 p-3">
-                        <NavigationMenuLink>
-                          {subMenuItemsOne.map((item, idx) => (
-                            <li key={idx}>
-                              <Link
-                                className={cn(
-                                  "flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                )}
-                                href={item.link}
-                              >
-                                {item.icon}
-                                <div>
-                                  <div className="text-sm font-semibold">
-                                    {item.title}
-                                  </div>
-                                  <p className="text-sm leading-snug text-muted-foreground">
-                                    {item.description}
-                                  </p>
+                        {subMenuItemsOne.map((item, idx) => (
+                          <li key={idx}>
+                            <NavigationMenuLink
+                              href={item.link}
+                              className={cn(
+                                "flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                            >
+                              {item.icon}
+                              <div>
+                                <div className="text-sm font-semibold">
+                                  {item.title}
                                 </div>
-                              </Link>
-                            </li>
-                          ))}
-                        </NavigationMenuLink>
+                                <p className="text-sm leading-snug text-muted-foreground">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -116,6 +118,7 @@ const Navbar = () => {
               </NavigationMenu>
             </div>
 
+            {/* Center Section: Logo */}
             <div className="flex-1 flex justify-center items-center">
               <Link
                 className="inline-flex items-center text-2xl select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -126,14 +129,17 @@ const Navbar = () => {
               </Link>
             </div>
 
+            {/* Right Section: Gopher Icon */}
             <div className="flex items-center gap-2">
               <GoGopher />
             </div>
           </div>
         </nav>
 
+        {/* Mobile Navigation */}
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
+            {/* Center Section: Logo */}
             <div className="flex-1 flex justify-center items-center">
               <Link
                 className="inline-flex items-center text-2xl select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -143,6 +149,7 @@ const Navbar = () => {
                 <span>Matt's Library</span>
               </Link>
             </div>
+            {/* Right Section: Menu Button */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -172,11 +179,11 @@ const Navbar = () => {
                       <AccordionContent className="mt-2">
                         {subMenuItemsOne.map((item, idx) => (
                           <Link
+                            href={item.link}
                             key={idx}
                             className={cn(
                               "flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             )}
-                            href={item.link}
                           >
                             {item.icon}
                             <div>

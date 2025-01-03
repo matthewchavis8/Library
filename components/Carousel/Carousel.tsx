@@ -75,7 +75,7 @@ const Carousel: React.FC = () => {
     <div className="my-8">
       {/* Title */}
       <div className="flex justify-center mb-4">
-        <p className="text-3xl text-white" style={{ fontFamily: "Montserrat" }}>
+        <p className="text-3xl " style={{ fontFamily: "Montserrat" }}>
           Books Read Since 2023
         </p>
       </div>
@@ -89,7 +89,7 @@ const Carousel: React.FC = () => {
               <div
                 className="flex-shrink-0 w-80 mx-2" // Increased width for better visibility
                 key={book.ID}
-                aria-hidden={!emblaApi || selectedIndex !== index}
+                
               >
                 <div className="rounded overflow-hidden shadow-lg bg-gray-800 flex flex-col h-full">
                   {/* Image Container with Fixed Dimensions */}

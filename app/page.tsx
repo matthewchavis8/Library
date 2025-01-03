@@ -19,7 +19,7 @@ const page = () => {
             <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
               Welcome to Matt's Library
             </h1>
-            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
+            <p className="mb-8 text-black max-w-xl lg:text-xl">
               Check out the Catalogue!
             </p>
           </div>
