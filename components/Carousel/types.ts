@@ -1,4 +1,3 @@
-// components/Carousel/types.ts
 
 export interface Book {
     ID: string;

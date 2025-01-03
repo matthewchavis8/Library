@@ -1,4 +1,3 @@
-// components/Carousel/Carousel.tsx
 
 import React, { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -12,11 +11,10 @@ const Carousel: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Optional: Loading and Error States
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch books data
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -37,7 +35,7 @@ const Carousel: React.FC = () => {
     fetchBooks();
   }, []);
 
-  // Update selected index on Embla's select event
+
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -53,7 +51,6 @@ const Carousel: React.FC = () => {
     };
   }, [emblaApi]);
 
-  // Navigation Handlers
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -62,7 +59,7 @@ const Carousel: React.FC = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // Conditional Rendering based on Loading and Error States
+  
   if (isLoading) {
     return <div className="text-center text-white">Loading...</div>;
   }
@@ -73,34 +70,34 @@ const Carousel: React.FC = () => {
 
   return (
     <div className="my-8">
-      {/* Title */}
+     
       <div className="flex justify-center mb-4">
         <p className="text-3xl " style={{ fontFamily: "Montserrat" }}>
           Books Read Since 2023
         </p>
       </div>
 
-      {/* Carousel */}
+   
       <div className="relative max-w-4xl mx-auto" aria-label="Books Carousel">
-        {/* Embla Carousel Container */}
+       
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {books.map((book, index) => (
               <div
-                className="flex-shrink-0 w-80 mx-2" // Increased width for better visibility
+                className="flex-shrink-0 w-80 mx-2" 
                 key={book.ID}
                 
               >
                 <div className="rounded overflow-hidden shadow-lg bg-gray-800 flex flex-col h-full">
-                  {/* Image Container with Fixed Dimensions */}
-                  <div className="relative w-full h-80"> {/* Fixed height */}
+                 
+                  <div className="relative w-full h-80"> 
                     <Image
                       src={book.image}
                       alt={book.title}
-                      layout="fill" // Makes the image fill the parent container
-                      objectFit="" // Ensures the image covers the container
+                      layout="fill"
+                      objectFit="" 
                       className=""
-                      priority={index < 3} // Optional: Prioritize loading first few images
+                      priority={index < 3} 
                     />
                   </div>
                   <div className="px-6 py-4 flex-1 flex flex-col justify-center">
@@ -117,7 +114,7 @@ const Carousel: React.FC = () => {
           </div>
         </div>
 
-        {/* Navigation Buttons */}
+       
         <button
           onClick={scrollPrev}
           className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-white"
@@ -134,7 +131,6 @@ const Carousel: React.FC = () => {
         </button>
       </div>
 
-      {/* Dots Navigation */}
       <div className="flex justify-center mt-4">
         {books.map((_, index) => (
           <button

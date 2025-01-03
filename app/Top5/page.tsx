@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Book } from "./types"; // Ensure this path is correct
+import { Book } from "./types"; 
 
 export default function Page() {
   const [books, setBooks] = useState<Book[]>([]);
@@ -12,7 +12,6 @@ export default function Page() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Define the desired book IDs
   const bookIds = ["23", "31", "2", "22", "28"];
 
   useEffect(() => {
@@ -25,13 +24,13 @@ export default function Page() {
         const data: Book[] = await res.json();
         setBooks(data);
 
-        // Filter books based on the defined IDs
+        
         const filtered = data.filter((book) => bookIds.includes(book.ID));
 
-        // Sort the filtered books according to the order in bookIds
+
         const sortedFiltered = bookIds
           .map((id) => filtered.find((book) => book.ID === id))
-          .filter((book): book is Book => book !== undefined); // Type guard to remove undefined
+          .filter((book): book is Book => book !== undefined);
 
         setTopFiveBooks(sortedFiltered);
         setIsLoading(false);
@@ -52,11 +51,11 @@ export default function Page() {
         style={{
           backgroundImage: "url('/library-backgroundimage.jpg')",
           minHeight: "100vh",
-          backgroundRepeat: "no-repeat", // Changed to no-repeat for a single background image
+          backgroundRepeat: "no-repeat", 
         }}
       >
         <div className="ml-12 mt-32 w-full max-w-7xl px-4">
-          {/* Header */}
+          
           <div className="flex justify-center mb-8">
             <p
               className="text-3xl"
@@ -66,7 +65,6 @@ export default function Page() {
             </p>
           </div>
 
-          {/* Loading State */}
           {isLoading && (
             <div className="text-center text-white">
               <p>Loading...</p>
@@ -80,7 +78,6 @@ export default function Page() {
             </div>
           )}
 
-          {/* Books Grid */}
           {!isLoading && !error && topFiveBooks.length > 0 && (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {topFiveBooks.map((book, index) => (
@@ -88,7 +85,7 @@ export default function Page() {
                   key={book.ID}
                   className="card bg-base-100 shadow-xl max-w-lg mx-auto"
                 >
-                  {/* Book Cover Image */}
+                
                   <div>
                     <img
                       src={book.image}
@@ -97,7 +94,7 @@ export default function Page() {
                     />
                   </div>
 
-                  {/* Book Details */}
+                
                   <div className="card-body">
                     <h1 className="text-2xl text-gray-700">#{index + 1}</h1>
                     <h2 className="card-title">{book.title}</h2>
@@ -122,7 +119,6 @@ export default function Page() {
             </div>
           )}
 
-          {/* No Books Found */}
           {!isLoading && !error && topFiveBooks.length === 0 && (
             <div className="text-center text-gray-300">
               <p>No books available at the moment. Please check back later.</p>
