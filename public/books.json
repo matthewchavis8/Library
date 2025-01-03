@@ -1,0 +1,302 @@
+[
+  {
+    "ID": "1",
+    "image": "/Images/Salems_lot.jpg",
+    "title": "Salem's Lot",
+    "author": "Stephen King",
+    "description": "Author Ben Mears returns to Salem's Lot to write a book about a house that has haunted him since childhood only to find his isolated hometown infested with vampires. While the vampires claim more victims, Mears convinces a small group of believers to combat the undead.",
+    "genre": "Horror",
+    "publishDate": "1975",
+    "pages": "672"
+  },
+  {
+    "ID": "2",
+    "image": "/Images/blackboy.jpg",
+    "title": "Black Boy",
+    "author": "Richard Wright",
+    "description": "Black Boy (1945) is a memoir by American author Richard Wright, detailing his upbringing. Wright describes his youth in the South: Mississippi, Arkansas and Tennessee, and his eventual move to Chicago, where he establishes his writing career and becomes involved with the Communist Party.",
+    "genre": "Autobiography",
+    "publishDate": "1945",
+    "pages": "448"
+  },
+  {
+    "ID": "3",
+    "image": "/Images/innsmouth.jpg",
+    "title": "The Shadow Over Innsmouth",
+    "author": "H.P. Lovecraft",
+    "description": "The plot centres around a young man travelling to the half-abandoned town of Innsmouth in Massachusetts. He soon discovers that a dark cult is controlling the town. After learning too much, he is attacked by the locals and has to cope with the horrors he witnessed.",
+    "genre": "Horror",
+    "publishDate": "1936",
+    "pages": "138"
+  },
+  {
+    "ID": "4",
+    "image": "/Images/madness.jpg",
+    "title": "At The Mountains Of Madness",
+    "author": "H.P. Lovecraft",
+    "description": "The story details the events of a disastrous expedition to Antarctica in September 1930, and what is found there by a group of explorers led by the narrator, Dr. William Dyer of Miskatonic University.",
+    "genre": "Horror",
+    "publishDate": "1936",
+    "pages": "138"
+  },
+  {
+    "ID": "5",
+    "image": "/Images/doorstep.jpg",
+    "title": "The Thing on the Doorstep",
+    "author": "H.P. Lovecraft",
+    "description": "Daniel Upton, the story's narrator, explains that he has killed his best friend, Edward Derby, and that he hopes his account will prove that he is not a murderer. He begins by describing Derby's life and career. Derby had been interested in the occult even as a very young boy, which led to him befriending Upton.",
+    "genre": "Horror",
+    "publishDate": "1937",
+    "pages": "54"
+  },
+  {
+    "ID": "6",
+    "image": "/Images/space.jpg",
+    "title": "The Colour Out of Space",
+    "author": "H.P. Lovecraft",
+    "description": "A secluded farm is struck by a strange meteorite which has apocalyptic consequences for the family living there and possibly the world.",
+    "genre": "Horror",
+    "publishDate": "1927",
+    "pages": "41"
+  },
+  {
+    "ID": "7",
+    "image": "/Images/dreams.jpg",
+    "title": "The Dreams in the Witch House",
+    "author": "H.P. Lovecraft",
+    "description": "Walter Gilman, a student of mathematics and folklore at Miskatonic University, rents an attic room in the Witch House, a house in Arkham, Massachusetts, that is rumored to be cursed. The house once harboured Keziah Mason, an accused witch who disappeared mysteriously from a Salem jail in 1692.",
+    "genre": "Horror",
+    "publishDate": "1933",
+    "pages": "79"
+  },
+  {
+    "ID": "8",
+    "image": "/Images/from_beyond.jpg",
+    "title": "From Beyond",
+    "author": "H.P. Lovecraft",
+    "description": "In “From Beyond,” the narrator recounts the experiments of one Crawford Tillinghast, a reclusive physicist who begins to explain his rationale as follows: “We see things only as we are constructed to see them, and can gain no idea of their absolute nature.",
+    "genre": "Horror",
+    "publishDate": "1934",
+    "pages": "33"
+  },
+  {
+    "ID": "9",
+    "image": "/Images/nameless_city.jpg",
+    "title": "The Nameless City",
+    "author": "H.P. Lovecraft",
+    "description": "A lone narrator mumbling about his experience of extreme horror in some ruin of a long-lost ancient city within an Arabian desert.",
+    "genre": "Horror",
+    "publishDate": "1921",
+    "pages": "63"
+  },
+  {
+    "ID": "10",
+    "image": "/Images/Ultralearning.jpg",
+    "title": "The Unnamable",
+    "author": "H.P. Lovecraft",
+    "description": "H.P. Lovecraft writes a short horror story as an account of author Randolph Carter and his skeptical friend Joel Manton who argue about existence of experience beyond the five human senses until a nearly fatal, unnameable encounter. Readers sensitive to depictions of the dead might want to skip this story.",
+    "genre": "Horror",
+    "publishDate": "1921",
+    "pages": "22"
+  },
+  {
+    "ID": "11",
+    "image": "/Images/shadow_out_of_time.jpg",
+    "title": "The Shadow Out of Time",
+    "author": "H.P. Lovecraft",
+    "description": "The story describes time and space travel by mind transfer. The premise is that a person in a given place and time can switch bodies with someone who is elsewhere or elsewhen.",
+    "genre": "Horror",
+    "publishDate": "1935",
+    "pages": "67"
+  },
+  {
+    "ID": "12",
+    "image": "/Images/zahn.jpg",
+    "title": "The Music of Eric Zahn",
+    "author": "H.P. Lovecraft",
+    "description": "The story is an account of the enigmatic Erich Zann, an elderly musician whose unique and unworldly melodies draw the curiosity of a young university student.",
+    "genre": "Horror",
+    "publishDate": "1922",
+    "pages": "62"
+  },
+  {
+    "ID": "13",
+    "image": "/Images/dune.jpg",
+    "title": "The Dunwich Horror",
+    "author": "H.P. Lovecraft",
+    "description": "The Dunwich Horror is the story of the Whateleys and its relation to the Dunwich Horror, which happened in Dunwich, Massachusetts in 1928. The narrator is an unnamed third person narrator. The story begins with the explanation that the Dunwich Horror was covered up by the town.",
+    "genre": "Horror",
+    "publishDate": "1928",
+    "pages": "48"
+  },
+  {
+    "ID": "14",
+    "image": "/Images/pickmans.jpg",
+    "title": "Pickman's Model",
+    "author": "H.P. Lovecraft",
+    "description": "The story revolves around a Bostonian painter named Richard Upton Pickman, who creates horrifying images. His works are brilliantly executed, yet are so graphic that they result in the revocation of his membership in the Boston Art Club and his ostracism from the city's artistic community.",
+    "genre": "Horror",
+    "publishDate": "1927",
+    "pages": "34"
+  },
+  {
+    "ID": "15",
+    "image": "/Images/charles_dexter_ward.jpg",
+    "title": "The Case of Charles Dexter Ward",
+    "author": "H.P. Lovecraft",
+    "description": "Describes how Charles Dexter Ward becomes obsessed with his distant ancestor, Joseph Curwen, an alleged wizard with unsavory habits. Ward physically resembles Curwen, and attempts to duplicate his ancestor's Qabalistic and alchemical feats.",
+    "genre": "Horror",
+    "publishDate": "1927",
+    "pages": "176"
+  },
+  {
+    "ID": "16",
+    "image": "/Images/the_old_man_and_the_sea.jpg",
+    "title": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "description": "It is the story of an old Cuban fisherman, down on his luck, and his supreme ordeal—a relentless, agonizing battle with a giant marlin far out in the Gulf Stream.",
+    "genre": "Fiction",
+    "publishDate": "1952",
+    "pages": "128"
+  },
+  {
+    "ID": "17",
+    "image": "/Images/whisperer_in_darkness.jpg",
+    "title": "The Whisperer in Darkness",
+    "author": "H.P. Lovecraft",
+    "description": "Horror and science fiction collide in the adventure of Albert Wilmarth, a folklore professor at Miskatonic University, as he investigates legends of strange creatures rumored to dwell in the most remote mountains of Vermont.",
+    "genre": "Horror",
+    "publishDate": "1931",
+    "pages": "64"
+  },
+  {
+    "ID": "18",
+    "image": "/Images/cthullu.jpg",
+    "title": "The Call of Cthulhu",
+    "author": "H.P. Lovecraft",
+    "description": "The Call of Cthulhu chronicles Francis Wayland Thurston as he goes through notes of his dead uncle and other accounts of a mysterious cult. The cult worships Cthulhu, a monstrous human-octopus-dragon hybrid that lives in the sunken corpse city of R'lyeh, whose dreams influence reality.",
+    "genre": "Horror",
+    "publishDate": "1928",
+    "pages": "87"
+  },
+  {
+    "ID": "19",
+    "image": "/Images/the_king_in_yellow.jpg",
+    "title": "The King in Yellow",
+    "author": "Robert W. Chambers",
+    "description": "The King in Yellow is both a collection of short stories and a fictitious play in that collection. The 'King' referred to in the stories is a menacing and powerful deity-like person who seems to possess people and make them mad. His character has inspired many artists, including H.P. Lovecraft.",
+    "genre": "Horror",
+    "publishDate": "1895",
+    "pages": "316"
+  },
+  {
+    "ID": "20",
+    "image": "/Images/needful_things.jpg",
+    "title": "Needful Things",
+    "author": "Stephen King",
+    "description": "The story focuses on a shop that sells collectibles and antiques, managed by Leland Gaunt, a new arrival to the town of Castle Rock, Maine, the setting of many King stories. Gaunt often asks customers to perform a prank or mysterious deed in exchange for the item they are drawn to.",
+    "genre": "Horror",
+    "publishDate": "1991",
+    "pages": "960"
+  },
+  {
+    "ID": "21",
+    "image": "/Images/rich_dad_poor_dad.jpg",
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "description": "Rich Dad Poor Dad is Robert's story of growing up with two dads—his real father and the father of his best friend, his rich dad—and the ways in which both men shaped his thoughts about money and investing.",
+    "genre": "Non-fiction",
+    "publishDate": "1997",
+    "pages": "336"
+  },
+  {
+    "ID": "22",
+    "image": "/Images/dune.jpg",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad'Dib. He would avenge the traitorous plot against his noble family—and would bring to fruition humankind's most ancient and unattainable dream.",
+    "genre": "Science Fiction",
+    "publishDate": "1965",
+    "pages": "896"
+  },
+  {
+    "ID": "23",
+    "image": "/Images/11:22:63.jpg",
+    "title": "11/22/63",
+    "author": "Stephen King",
+    "description": "11/22/63 is a novel by American author Stephen King about a time traveler who attempts to prevent the assassination of United States President John F. Kennedy, which occurred on November 22, 1963 (the novel's titular date). It is the 60th book published by Stephen King, his 49th novel and the 42nd under his own name.",
+    "genre": "Horror",
+    "publishDate": "2012",
+    "pages": "849"
+  },
+  {
+    "ID": "24",
+    "image": "/Images/the_stand.jpg",
+    "title": "The Stand",
+    "author": "Stephen King",
+    "description": "The plot centers on a deadly pandemic of weaponized influenza and its aftermath, in which the few surviving humans gather into factions that are each led by a personification of either good or evil and seem fated to clash with each other.",
+    "genre": "Horror",
+    "publishDate": "1978",
+    "pages": "1472"
+  },
+  {
+    "ID": "25",
+    "image": "/Images/principles.jpg",
+    "title": "Principles",
+    "author": "Ray Dalio",
+    "description": "In Principles, Dalio shares what he's learned over the course of his remarkable career. He argues that life, management, economics, and investing can all be systemized into rules and understood like machines. The book's hundreds of practical lessons, which are built around his cornerstones of “radical truth” and...",
+    "genre": "Biography",
+    "publishDate": "2017",
+    "pages": "300"
+  },
+  {
+    "ID": "26",
+    "image": "/Images/ARandomWalkDownWallStreet.jpg",
+    "title": "A Random Walk Down Wall Street",
+    "author": "Burton G. Malkiel",
+    "description": "A Random Walk Down Wall Street is a classic guide that blends history, economics, market theory, and behavioral finance to offer practical and actionable advice for investing and achieving financial freedom. Malkiel’s central message is abundantly clear—begin a consistent savings plan as early as possible and invest the core of your portfolio in low-cost, broad-based index funds.",
+    "genre": "Non-fiction",
+    "publishDate": "1973",
+    "pages": "480"
+  },
+  {
+    "ID": "27",
+    "image": "/Images/different-season.jpg",
+    "title": "Different Seasons",
+    "author": "Stephen King",
+    "description": "A “hypnotic” (The New York Times Book Review) collection of four novellas—including the inspirations behind the films Stand By Me and The Shawshank Redemption—from Stephen King, bound together by the changing of seasons, each taking on the theme of a journey with strikingly different tones and characters.",
+    "genre": "Horror",
+    "publishDate": "1982",
+    "pages": "527"
+  },
+  {
+    "ID": "28",
+    "image": "/Images/ShawshankRedemption.jpg",
+    "title": "Shawshank Redemption",
+    "author": "Stephen King",
+    "description": "When Andy Dufresne is convicted of murder and sentenced to life in Shawshank prison, he must use his wits and newly forged friendships to keep himself and his hope alive. But will he be able to survive the corruption and danger he faces within this notorious prison’s walls? Based on the novella by Stephen King and popularized by the highly acclaimed movie, The Shawshank Redemption is a story of resilience and a theatrical experience like no other.",
+    "genre": "Horror",
+    "publishDate": "1982",
+    "pages": "113"
+  },
+  {
+    "ID": "29",
+    "image": "/Images/Brave.jpeg",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "description": "The novel examines a futuristic society, called the World State, that revolves around science and efficiency. In this society, emotions and individuality are conditioned out of children at a young age, and there are no lasting relationships because “everyone belongs to everyone else” (a common World State dictum).",
+    "genre": "Dystopian Sci Fi",
+    "publishDate": "1932",
+    "pages": "288"
+  },
+  {
+    "ID": "30",
+    "image": "/Images/Flowers.jpg",
+    "title": "Flowers for Algernon",
+    "author": "Daniel Keyes",
+    "description": "In Flowers for Algernon, the mentally handicapped Charlie Gordon is transformed by a surgery that allows him to become intelligent. The short story and later-developed novel explores themes about the cycle of life, the limits of science, and whether knowledge is truly more valuable than happiness.",
+    "genre": "Sci Fi",
+    "publishDate": "1959",
+    "pages": "280"
+  }
+]
