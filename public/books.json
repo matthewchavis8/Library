@@ -318,5 +318,15 @@
     "genre": "Computer Science",
     "publishDate": "2018",
     "pages": "747"
+  },
+  {
+    "ID": "33",
+    "image": "/Images/InsideTheMachine.jpeg",
+    "title": "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture",
+    "author": "Jon Stokes",
+    "description": "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture by Jon Stokes is an accessible, illustrated guide to how CPUs work, explaining fundamentals like arithmetic, memory access, control flow, and data types, then moving into advanced topics such as pipelining, caching, superscalar and out-of-order execution, and the differences between RISC and CISC, with real-world examples from Intel, IBM, and Motorola processors (up to the Pentium M and Core 2 Duo); it’s designed as a clear, engaging introduction for students, professionals, and hobbyists who want to understand the concepts at the heart of modern computer architecture without diving straight into heavy textbooks.",
+    "genre": "Computer Science",
+    "publishDate": "2006",
+    "pages": "320"
   }
 ]

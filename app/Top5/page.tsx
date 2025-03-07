@@ -12,7 +12,7 @@ export default function Page() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const bookIds = ["23", "31", "2", "22", "28"];
+  const bookIds = ["31", "23", "2", "22", "28"];
 
   useEffect(() => {
     const fetchBooks = async () => {
