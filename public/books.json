@@ -308,5 +308,15 @@
     "genre": "Fiction",
     "publishDate": "1985",
     "pages": "384"
+  },
+  {
+    "ID": "32",
+    "image": "/Images/Ostep.jpg",
+    "title": "operating systems: three easy pieces",
+    "author": "Remzi Arpaci-Dusseau",
+    "description": "OSTEP (oh step), or the the comet book, represents the culmination of years of teaching intro to operating systems to both undergraduates and graduates at the University of Wisconsin-Madison Computer Sciences department for nearly 25 years.The book is organized around three concepts fundamental to OS construction: virtualization (of CPU and memory), concurrency (locks and condition variables), and persistence (disks, RAIDS, and file systems).",
+    "genre": "Computer Science",
+    "publishDate": "2018",
+    "pages": "747"
   }
 ]
