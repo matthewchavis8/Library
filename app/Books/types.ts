@@ -6,6 +6,7 @@ export interface Book {
     author: string;
     description: string;
     genre: string;
+    type: string;
     publishDate: string;
     pages: string;
   }

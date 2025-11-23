@@ -1,0 +1,62 @@
+[
+  {
+    "ID": "W1",
+    "image": "/Images/2666.jpg",
+    "title": "2666",
+    "author": "Roberto Bola\u00f1o",
+    "description": "Bola\u00f1o\u2019s sprawling posthumous epic spans continents, literary obsessions, and a haunting series of crimes in the desert city of Santa Teresa.",
+    "genre": "Fiction",
+    "type": "Fiction",
+    "publishDate": "2004",
+    "pages": "912",
+    "currentlyReading": true
+  },
+  {
+    "ID": "W2",
+    "image": "/Images/GravityAndGrace.jpg",
+    "title": "Gravity and Grace",
+    "author": "Simone Weil",
+    "description": "A collection of Weil\u2019s notebooks reflecting on attention, suffering, and spirituality\u2014dense but illuminating philosophical fragments.",
+    "genre": "Philosophy",
+    "type": "Non-fiction",
+    "publishDate": "1947",
+    "pages": "224",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W3",
+    "image": "/Images/ManAndHisSymbols.jpg",
+    "title": "Man and His Symbols",
+    "author": "Carl G. Jung",
+    "description": "Jung\u2019s accessible introduction to analytical psychology, symbolism, and the language of dreams, compiled with his closest collaborators.",
+    "genre": "Psychology",
+    "type": "Non-fiction",
+    "publishDate": "1964",
+    "pages": "320",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W4",
+    "image": "/Images/CrimeAndPunishment.webp",
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "description": "Dostoevsky\u2019s psychological masterpiece follows Raskolnikov\u2019s inner turmoil after committing murder in St. Petersburg.",
+    "genre": "Classic Fiction",
+    "type": "Fiction",
+    "publishDate": "1866",
+    "pages": "671",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W5",
+    "image": "/Images/MythOfSisyphus.webp",
+    "title": "The Myth of Sisyphus",
+    "author": "Albert Camus",
+    "description": "Camus meditates on the absurd, rebellion, and what it means to live without appeal in a seemingly meaningless universe.",
+    "genre": "Philosophy",
+    "type": "Non-fiction",
+    "publishDate": "1942",
+    "pages": "212",
+    "currentlyReading": false
+  }
+]

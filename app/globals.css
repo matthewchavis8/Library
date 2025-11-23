@@ -70,3 +70,21 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @keyframes book-float {
+    0% {
+      transform: rotate(-1.5deg) translateY(0);
+    }
+    50% {
+      transform: rotate(1.5deg) translateY(-10px);
+    }
+    100% {
+      transform: rotate(-1.5deg) translateY(0);
+    }
+  }
+
+  .animate-book-float {
+    animation: book-float 6s ease-in-out infinite;
+  }
+}

@@ -7,7 +7,8 @@
     "description": "Author Ben Mears returns to Salem's Lot to write a book about a house that has haunted him since childhood only to find his isolated hometown infested with vampires. While the vampires claim more victims, Mears convinces a small group of believers to combat the undead.",
     "genre": "Horror",
     "publishDate": "1975",
-    "pages": "672"
+    "pages": "672",
+    "type": "Fiction"
   },
   {
     "ID": "2",
@@ -17,7 +18,8 @@
     "description": "Black Boy (1945) is a memoir by American author Richard Wright, detailing his upbringing. Wright describes his youth in the South: Mississippi, Arkansas and Tennessee, and his eventual move to Chicago, where he establishes his writing career and becomes involved with the Communist Party.",
     "genre": "Autobiography",
     "publishDate": "1945",
-    "pages": "448"
+    "pages": "448",
+    "type": "Non-fiction"
   },
   {
     "ID": "3",
@@ -27,7 +29,8 @@
     "description": "The plot centres around a young man travelling to the half-abandoned town of Innsmouth in Massachusetts. He soon discovers that a dark cult is controlling the town. After learning too much, he is attacked by the locals and has to cope with the horrors he witnessed.",
     "genre": "Horror",
     "publishDate": "1936",
-    "pages": "138"
+    "pages": "138",
+    "type": "Fiction"
   },
   {
     "ID": "4",
@@ -37,7 +40,8 @@
     "description": "The story details the events of a disastrous expedition to Antarctica in September 1930, and what is found there by a group of explorers led by the narrator, Dr. William Dyer of Miskatonic University.",
     "genre": "Horror",
     "publishDate": "1936",
-    "pages": "138"
+    "pages": "138",
+    "type": "Fiction"
   },
   {
     "ID": "5",
@@ -47,7 +51,8 @@
     "description": "Daniel Upton, the story's narrator, explains that he has killed his best friend, Edward Derby, and that he hopes his account will prove that he is not a murderer. He begins by describing Derby's life and career. Derby had been interested in the occult even as a very young boy, which led to him befriending Upton.",
     "genre": "Horror",
     "publishDate": "1937",
-    "pages": "54"
+    "pages": "54",
+    "type": "Fiction"
   },
   {
     "ID": "6",
@@ -57,7 +62,8 @@
     "description": "A secluded farm is struck by a strange meteorite which has apocalyptic consequences for the family living there and possibly the world.",
     "genre": "Horror",
     "publishDate": "1927",
-    "pages": "41"
+    "pages": "41",
+    "type": "Fiction"
   },
   {
     "ID": "7",
@@ -67,17 +73,19 @@
     "description": "Walter Gilman, a student of mathematics and folklore at Miskatonic University, rents an attic room in the Witch House, a house in Arkham, Massachusetts, that is rumored to be cursed. The house once harboured Keziah Mason, an accused witch who disappeared mysteriously from a Salem jail in 1692.",
     "genre": "Horror",
     "publishDate": "1933",
-    "pages": "79"
+    "pages": "79",
+    "type": "Fiction"
   },
   {
     "ID": "8",
     "image": "/Images/from_beyond.jpg",
     "title": "From Beyond",
     "author": "H.P. Lovecraft",
-    "description": "In “From Beyond,” the narrator recounts the experiments of one Crawford Tillinghast, a reclusive physicist who begins to explain his rationale as follows: “We see things only as we are constructed to see them, and can gain no idea of their absolute nature.",
+    "description": "In \u201cFrom Beyond,\u201d the narrator recounts the experiments of one Crawford Tillinghast, a reclusive physicist who begins to explain his rationale as follows: \u201cWe see things only as we are constructed to see them, and can gain no idea of their absolute nature.",
     "genre": "Horror",
     "publishDate": "1934",
-    "pages": "33"
+    "pages": "33",
+    "type": "Fiction"
   },
   {
     "ID": "9",
@@ -87,7 +95,8 @@
     "description": "A lone narrator mumbling about his experience of extreme horror in some ruin of a long-lost ancient city within an Arabian desert.",
     "genre": "Horror",
     "publishDate": "1921",
-    "pages": "63"
+    "pages": "63",
+    "type": "Fiction"
   },
   {
     "ID": "10",
@@ -97,7 +106,8 @@
     "description": "H.P. Lovecraft writes a short horror story as an account of author Randolph Carter and his skeptical friend Joel Manton who argue about existence of experience beyond the five human senses until a nearly fatal, unnameable encounter. Readers sensitive to depictions of the dead might want to skip this story.",
     "genre": "Horror",
     "publishDate": "1921",
-    "pages": "22"
+    "pages": "22",
+    "type": "Fiction"
   },
   {
     "ID": "11",
@@ -107,7 +117,8 @@
     "description": "The story describes time and space travel by mind transfer. The premise is that a person in a given place and time can switch bodies with someone who is elsewhere or elsewhen.",
     "genre": "Horror",
     "publishDate": "1935",
-    "pages": "67"
+    "pages": "67",
+    "type": "Fiction"
   },
   {
     "ID": "12",
@@ -117,7 +128,8 @@
     "description": "The story is an account of the enigmatic Erich Zann, an elderly musician whose unique and unworldly melodies draw the curiosity of a young university student.",
     "genre": "Horror",
     "publishDate": "1922",
-    "pages": "62"
+    "pages": "62",
+    "type": "Fiction"
   },
   {
     "ID": "13",
@@ -127,7 +139,8 @@
     "description": "The Dunwich Horror is the story of the Whateleys and its relation to the Dunwich Horror, which happened in Dunwich, Massachusetts in 1928. The narrator is an unnamed third person narrator. The story begins with the explanation that the Dunwich Horror was covered up by the town.",
     "genre": "Horror",
     "publishDate": "1928",
-    "pages": "48"
+    "pages": "48",
+    "type": "Fiction"
   },
   {
     "ID": "14",
@@ -137,7 +150,8 @@
     "description": "The story revolves around a Bostonian painter named Richard Upton Pickman, who creates horrifying images. His works are brilliantly executed, yet are so graphic that they result in the revocation of his membership in the Boston Art Club and his ostracism from the city's artistic community.",
     "genre": "Horror",
     "publishDate": "1927",
-    "pages": "34"
+    "pages": "34",
+    "type": "Fiction"
   },
   {
     "ID": "15",
@@ -147,17 +161,19 @@
     "description": "Describes how Charles Dexter Ward becomes obsessed with his distant ancestor, Joseph Curwen, an alleged wizard with unsavory habits. Ward physically resembles Curwen, and attempts to duplicate his ancestor's Qabalistic and alchemical feats.",
     "genre": "Horror",
     "publishDate": "1927",
-    "pages": "176"
+    "pages": "176",
+    "type": "Fiction"
   },
   {
     "ID": "16",
     "image": "/Images/the_old_man_and_the_sea.jpg",
     "title": "The Old Man and the Sea",
     "author": "Ernest Hemingway",
-    "description": "It is the story of an old Cuban fisherman, down on his luck, and his supreme ordeal—a relentless, agonizing battle with a giant marlin far out in the Gulf Stream.",
+    "description": "It is the story of an old Cuban fisherman, down on his luck, and his supreme ordeal\u2014a relentless, agonizing battle with a giant marlin far out in the Gulf Stream.",
     "genre": "Fiction",
     "publishDate": "1952",
-    "pages": "128"
+    "pages": "128",
+    "type": "Fiction"
   },
   {
     "ID": "17",
@@ -167,7 +183,8 @@
     "description": "Horror and science fiction collide in the adventure of Albert Wilmarth, a folklore professor at Miskatonic University, as he investigates legends of strange creatures rumored to dwell in the most remote mountains of Vermont.",
     "genre": "Horror",
     "publishDate": "1931",
-    "pages": "64"
+    "pages": "64",
+    "type": "Fiction"
   },
   {
     "ID": "18",
@@ -177,7 +194,8 @@
     "description": "The Call of Cthulhu chronicles Francis Wayland Thurston as he goes through notes of his dead uncle and other accounts of a mysterious cult. The cult worships Cthulhu, a monstrous human-octopus-dragon hybrid that lives in the sunken corpse city of R'lyeh, whose dreams influence reality.",
     "genre": "Horror",
     "publishDate": "1928",
-    "pages": "87"
+    "pages": "87",
+    "type": "Fiction"
   },
   {
     "ID": "19",
@@ -187,7 +205,8 @@
     "description": "The King in Yellow is both a collection of short stories and a fictitious play in that collection. The 'King' referred to in the stories is a menacing and powerful deity-like person who seems to possess people and make them mad. His character has inspired many artists, including H.P. Lovecraft.",
     "genre": "Horror",
     "publishDate": "1895",
-    "pages": "316"
+    "pages": "316",
+    "type": "Fiction"
   },
   {
     "ID": "20",
@@ -197,27 +216,30 @@
     "description": "The story focuses on a shop that sells collectibles and antiques, managed by Leland Gaunt, a new arrival to the town of Castle Rock, Maine, the setting of many King stories. Gaunt often asks customers to perform a prank or mysterious deed in exchange for the item they are drawn to.",
     "genre": "Horror",
     "publishDate": "1991",
-    "pages": "960"
+    "pages": "960",
+    "type": "Fiction"
   },
   {
     "ID": "21",
     "image": "/Images/rich_dad_poor_dad.jpg",
     "title": "Rich Dad Poor Dad",
     "author": "Robert Kiyosaki",
-    "description": "Rich Dad Poor Dad is Robert's story of growing up with two dads—his real father and the father of his best friend, his rich dad—and the ways in which both men shaped his thoughts about money and investing.",
+    "description": "Rich Dad Poor Dad is Robert's story of growing up with two dads\u2014his real father and the father of his best friend, his rich dad\u2014and the ways in which both men shaped his thoughts about money and investing.",
     "genre": "Non-fiction",
     "publishDate": "1997",
-    "pages": "336"
+    "pages": "336",
+    "type": "Non-fiction"
   },
   {
     "ID": "22",
     "image": "/Images/dune.jpeg",
     "title": "Dune",
     "author": "Frank Herbert",
-    "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad'Dib. He would avenge the traitorous plot against his noble family—and would bring to fruition humankind's most ancient and unattainable dream.",
+    "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad'Dib. He would avenge the traitorous plot against his noble family\u2014and would bring to fruition humankind's most ancient and unattainable dream.",
     "genre": "Science Fiction",
     "publishDate": "1965",
-    "pages": "896"
+    "pages": "896",
+    "type": "Fiction"
   },
   {
     "ID": "23",
@@ -227,7 +249,8 @@
     "description": "11/22/63 is a novel by American author Stephen King about a time traveler who attempts to prevent the assassination of United States President John F. Kennedy, which occurred on November 22, 1963 (the novel's titular date). It is the 60th book published by Stephen King, his 49th novel and the 42nd under his own name.",
     "genre": "Horror",
     "publishDate": "2012",
-    "pages": "849"
+    "pages": "849",
+    "type": "Fiction"
   },
   {
     "ID": "24",
@@ -237,57 +260,63 @@
     "description": "The plot centers on a deadly pandemic of weaponized influenza and its aftermath, in which the few surviving humans gather into factions that are each led by a personification of either good or evil and seem fated to clash with each other.",
     "genre": "Horror",
     "publishDate": "1978",
-    "pages": "1472"
+    "pages": "1472",
+    "type": "Fiction"
   },
   {
     "ID": "25",
     "image": "/Images/principles.jpg",
     "title": "Principles",
     "author": "Ray Dalio",
-    "description": "In Principles, Dalio shares what he's learned over the course of his remarkable career. He argues that life, management, economics, and investing can all be systemized into rules and understood like machines. The book's hundreds of practical lessons, which are built around his cornerstones of “radical truth” and...",
+    "description": "In Principles, Dalio shares what he's learned over the course of his remarkable career. He argues that life, management, economics, and investing can all be systemized into rules and understood like machines. The book's hundreds of practical lessons, which are built around his cornerstones of \u201cradical truth\u201d and...",
     "genre": "Biography",
     "publishDate": "2017",
-    "pages": "300"
+    "pages": "300",
+    "type": "Non-fiction"
   },
   {
     "ID": "26",
     "image": "/Images/ARandomWalkDownWallStreet.jpg",
     "title": "A Random Walk Down Wall Street",
     "author": "Burton G. Malkiel",
-    "description": "A Random Walk Down Wall Street is a classic guide that blends history, economics, market theory, and behavioral finance to offer practical and actionable advice for investing and achieving financial freedom. Malkiel’s central message is abundantly clear—begin a consistent savings plan as early as possible and invest the core of your portfolio in low-cost, broad-based index funds.",
+    "description": "A Random Walk Down Wall Street is a classic guide that blends history, economics, market theory, and behavioral finance to offer practical and actionable advice for investing and achieving financial freedom. Malkiel\u2019s central message is abundantly clear\u2014begin a consistent savings plan as early as possible and invest the core of your portfolio in low-cost, broad-based index funds.",
     "genre": "Non-fiction",
     "publishDate": "1973",
-    "pages": "480"
+    "pages": "480",
+    "type": "Non-fiction"
   },
   {
     "ID": "27",
     "image": "/Images/different-season.jpg",
     "title": "Different Seasons",
     "author": "Stephen King",
-    "description": "A “hypnotic” (The New York Times Book Review) collection of four novellas—including the inspirations behind the films Stand By Me and The Shawshank Redemption—from Stephen King, bound together by the changing of seasons, each taking on the theme of a journey with strikingly different tones and characters.",
+    "description": "A \u201chypnotic\u201d (The New York Times Book Review) collection of four novellas\u2014including the inspirations behind the films Stand By Me and The Shawshank Redemption\u2014from Stephen King, bound together by the changing of seasons, each taking on the theme of a journey with strikingly different tones and characters.",
     "genre": "Horror",
     "publishDate": "1982",
-    "pages": "527"
+    "pages": "527",
+    "type": "Fiction"
   },
   {
     "ID": "28",
     "image": "/Images/ShawshankRedemption.jpg",
     "title": "Shawshank Redemption",
     "author": "Stephen King",
-    "description": "When Andy Dufresne is convicted of murder and sentenced to life in Shawshank prison, he must use his wits and newly forged friendships to keep himself and his hope alive. But will he be able to survive the corruption and danger he faces within this notorious prison’s walls? Based on the novella by Stephen King and popularized by the highly acclaimed movie, The Shawshank Redemption is a story of resilience and a theatrical experience like no other.",
+    "description": "When Andy Dufresne is convicted of murder and sentenced to life in Shawshank prison, he must use his wits and newly forged friendships to keep himself and his hope alive. But will he be able to survive the corruption and danger he faces within this notorious prison\u2019s walls? Based on the novella by Stephen King and popularized by the highly acclaimed movie, The Shawshank Redemption is a story of resilience and a theatrical experience like no other.",
     "genre": "Horror",
     "publishDate": "1982",
-    "pages": "113"
+    "pages": "113",
+    "type": "Fiction"
   },
   {
     "ID": "29",
     "image": "/Images/Brave.jpeg",
     "title": "Brave New World",
     "author": "Aldous Huxley",
-    "description": "The novel examines a futuristic society, called the World State, that revolves around science and efficiency. In this society, emotions and individuality are conditioned out of children at a young age, and there are no lasting relationships because “everyone belongs to everyone else” (a common World State dictum).",
-    "genre": "Dystopian Sci Fi",
+    "description": "The novel examines a futuristic society, called the World State, that revolves around science and efficiency. In this society, emotions and individuality are conditioned out of children at a young age, and there are no lasting relationships because \u201ceveryone belongs to everyone else\u201d (a common World State dictum).",
+    "genre": "Dystopian",
     "publishDate": "1932",
-    "pages": "288"
+    "pages": "288",
+    "type": "Fiction"
   },
   {
     "ID": "30",
@@ -295,9 +324,10 @@
     "title": "Flowers for Algernon",
     "author": "Daniel Keyes",
     "description": "In Flowers for Algernon, the mentally handicapped Charlie Gordon is transformed by a surgery that allows him to become intelligent. The short story and later-developed novel explores themes about the cycle of life, the limits of science, and whether knowledge is truly more valuable than happiness.",
-    "genre": "Sci Fi",
+    "genre": "Fiction",
     "publishDate": "1959",
-    "pages": "280"
+    "pages": "280",
+    "type": "Fiction"
   },
   {
     "ID": "31",
@@ -307,7 +337,8 @@
     "description": "Based on historical events that took place on the Texas-Mexico border in the mid-19th century, Blood Meridian traces the fortunes of the Kid, a sixteen-year-old Tennessean who stumbles into the nightmarish world where aboriginal Americans are being murdered and the market for their scalps is thriving.",
     "genre": "Fiction",
     "publishDate": "1985",
-    "pages": "384"
+    "pages": "384",
+    "type": "Fiction"
   },
   {
     "ID": "32",
@@ -317,16 +348,40 @@
     "description": "OSTEP (oh step), or the the comet book, represents the culmination of years of teaching intro to operating systems to both undergraduates and graduates at the University of Wisconsin-Madison Computer Sciences department for nearly 25 years.The book is organized around three concepts fundamental to OS construction: virtualization (of CPU and memory), concurrency (locks and condition variables), and persistence (disks, RAIDS, and file systems).",
     "genre": "Computer Science",
     "publishDate": "2018",
-    "pages": "747"
+    "pages": "747",
+    "type": "Non-fiction"
   },
   {
     "ID": "33",
     "image": "/Images/InsideTheMachine.jpeg",
     "title": "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture",
     "author": "Jon Stokes",
-    "description": "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture by Jon Stokes is an accessible, illustrated guide to how CPUs work, explaining fundamentals like arithmetic, memory access, control flow, and data types, then moving into advanced topics such as pipelining, caching, superscalar and out-of-order execution, and the differences between RISC and CISC, with real-world examples from Intel, IBM, and Motorola processors (up to the Pentium M and Core 2 Duo); it’s designed as a clear, engaging introduction for students, professionals, and hobbyists who want to understand the concepts at the heart of modern computer architecture without diving straight into heavy textbooks.",
+    "description": "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture by Jon Stokes is an accessible, illustrated guide to how CPUs work, explaining fundamentals like arithmetic, memory access, control flow, and data types, then moving into advanced topics such as pipelining, caching, superscalar and out-of-order execution, and the differences between RISC and CISC, with real-world examples from Intel, IBM, and Motorola processors (up to the Pentium M and Core 2 Duo); it\u2019s designed as a clear, engaging introduction for students, professionals, and hobbyists who want to understand the concepts at the heart of modern computer architecture without diving straight into heavy textbooks.",
     "genre": "Computer Science",
     "publishDate": "2006",
-    "pages": "320"
+    "pages": "320",
+    "type": "Non-fiction"
+  },
+  {
+    "ID": "34",
+    "image": "/Images/SunAndSteel.jpg",
+    "title": "Sun and Steel",
+    "author": "Yukio Mishima",
+    "description": "Part memoir, part philosophical meditation, Mishima reflects on the discipline of bodybuilding, the relationship between language and the body, and his pursuit of beauty through ritual, pain, and sunlight.",
+    "genre": "Non-fiction",
+    "publishDate": "1968",
+    "pages": "112",
+    "type": "Non-fiction"
+  },
+  {
+    "ID": "35",
+    "image": "/Images/GoTellItOnTheMountain.jpg",
+    "title": "Go Tell It on the Mountain",
+    "author": "James Baldwin",
+    "description": "Baldwin\u2019s semi-autobiographical novel follows young John Grimes in 1930s Harlem as he wrestles with faith, family expectations, and the weight of American racism across generations.",
+    "genre": "Novel",
+    "publishDate": "1953",
+    "pages": "272",
+    "type": "Fiction"
   }
 ]
