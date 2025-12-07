@@ -58,5 +58,53 @@
     "publishDate": "1942",
     "pages": "212",
     "currentlyReading": false
+  },
+  {
+    "ID": "W6",
+    "image": "/Images/Frankenstein.jpg",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "description": "Mary Shelley’s Gothic novel follows Victor Frankenstein, a young scientist who creates a living being only to face the devastating moral, emotional, and societal consequences of playing God.",
+    "genre": "Novel",
+    "publishDate": "1818",
+    "pages": "280",
+    "type": "Fiction",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W7",
+    "image": "/Images/BrothersKamakarov.jpg",
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "description": "Dostoevsky’s philosophical novel explores faith, doubt, morality, and free will through the turbulent relationships of the Karamazov family, culminating in a dramatic murder trial that questions justice and human responsibility.",
+    "genre": "Novel",
+    "publishDate": "1880",
+    "pages": "796",
+    "type": "Fiction",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W8",
+    "image": "/Images/EastOfEden.jpg",
+    "title": "East of Eden",
+    "author": "John Steinbeck",
+    "description": "Steinbeck’s epic novel traces the intertwined histories of the Trask and Hamilton families in California, exploring themes of good and evil, freedom of choice, and the idea that humans can overcome their own flawed nature.",
+    "genre": "Novel",
+    "publishDate": "1952",
+    "pages": "601",
+    "type": "Fiction",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W9",
+    "image": "/Images/MobyDick.jpg",
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "description": "Melville’s novel follows Ishmael and the obsessive Captain Ahab on a perilous voyage to hunt the white whale Moby Dick, exploring themes of obsession, fate, humanity, and the power of nature.",
+    "genre": "Novel",
+    "publishDate": "1851",
+    "pages": "635",
+    "type": "Fiction",
+    "currentlyReading": false
   }
 ]

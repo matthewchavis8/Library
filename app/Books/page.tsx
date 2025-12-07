@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import { Search, X, Calendar, User, Bookmark, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Search, X, Calendar, User, ArrowRight } from "lucide-react";
 import { Book } from "./types";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -57,7 +58,7 @@ const CATEGORY_FILTERS: CategoryFilter[] = [
   },
 ];
 
-const page = () => {
+const BooksPage = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -72,7 +73,7 @@ const page = () => {
         }
         const data: Book[] = await res.json();
         setBooks(data);
-      } catch (error: any) {
+      } catch (error: unknown) {
         console.error(error);
       }
     };
@@ -221,10 +222,12 @@ const page = () => {
                 >
                   {/* Image Container */}
                   <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
-                    <img
+                    <Image
                       src={book.image}
                       alt={book.title}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      fill
+                      sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                     />
                   </div>
 
@@ -375,4 +378,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default BooksPage;

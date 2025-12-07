@@ -2,16 +2,26 @@
 
 import React, { useState, useEffect } from 'react';
 
+type Point = {
+  x: number;
+  y: number;
+};
+
+type EyePosition = {
+  left: Point;
+  right: Point;
+};
+
 const GoGopher = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [eyePosition, setEyePosition] = useState({
+  const [mousePos, setMousePos] = useState<Point>({ x: 0, y: 0 });
+  const [eyePosition, setEyePosition] = useState<EyePosition>({
     left: { x: 0, y: 0 },
     right: { x: 0, y: 0 },
   });
 
   useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePos({ x: event.clientX, y: event.clientY });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -20,9 +30,13 @@ const GoGopher = () => {
 
   useEffect(() => {
     const svgElement = document.getElementById('gopher-svg');
-    const svgRect = svgElement!.getBoundingClientRect();
+    if (!svgElement) {
+      return;
+    }
 
-    const getEyeCenter = (cx: any, cy: any) => ({
+    const svgRect = svgElement.getBoundingClientRect();
+
+    const getEyeCenter = (cx: number, cy: number): Point => ({
       x: svgRect.left + (cx / 360) * svgRect.width,
       y: svgRect.top + (cy / 400) * svgRect.height,
     });
@@ -31,7 +45,7 @@ const GoGopher = () => {
     const rightEyeCenter = getEyeCenter(215, 130);
     const maxDistance = 10;
 
-    const calculateEyePosition = (eyeCenter: any) => {
+    const calculateEyePosition = (eyeCenter: Point): Point => {
       const dx = mousePos.x - eyeCenter.x;
       const dy = mousePos.y - eyeCenter.y;
       const angle = Math.atan2(dy, dx);

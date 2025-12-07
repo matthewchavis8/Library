@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <BsBookHalf className="size-8" />
-              <span className="text-xl font-bold">Matt's Library</span>
+              <span className="text-xl font-bold">Matt&rsquo;s Library</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
               A curated collection of great reads spanning fiction, non-fiction, horror, and computer science.

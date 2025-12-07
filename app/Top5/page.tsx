@@ -1,16 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Calendar, User, Bookmark, Crown } from "lucide-react";
 import { Book } from "./types";
 import { Badge } from "@/components/ui/badge";
+
+const TOP_BOOK_IDS = ["31", "23", "2", "22", "28"] as const;
 
 export default function Page() {
   const [topFiveBooks, setTopFiveBooks] = useState<Book[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
-  const bookIds = ["31", "23", "2", "22", "28"];
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -21,17 +22,21 @@ export default function Page() {
         }
         const data: Book[] = await res.json();
 
-        const filtered = data.filter((book) => bookIds.includes(book.ID));
+        const filtered = data.filter((book) =>
+          TOP_BOOK_IDS.includes(book.ID as (typeof TOP_BOOK_IDS)[number])
+        );
 
-        const sortedFiltered = bookIds
+        const sortedFiltered = TOP_BOOK_IDS
           .map((id) => filtered.find((book) => book.ID === id))
           .filter((book): book is Book => book !== undefined);
 
         setTopFiveBooks(sortedFiltered);
         setIsLoading(false);
-      } catch (error: any) {
+      } catch (error: unknown) {
+        const message =
+          error instanceof Error ? error.message : "Unknown error";
         console.error(error);
-        setError(error.message || "Unknown error");
+        setError(message);
         setIsLoading(false);
       }
     };
@@ -97,10 +102,12 @@ export default function Page() {
 
                 {/* Image */}
                 <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
-                  <img
+                  <Image
                     src={book.image}
                     alt={book.title}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
                 </div>
 

@@ -1,14 +1,23 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+type Point = {
+  x: number;
+  y: number;
+};
 
 const RustCrab = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [eyePosition, setEyePosition] = useState({ left: { x: 0, y: 0 }, right: { x: 0, y: 0 }});
+  const [mousePos, setMousePos] = useState<Point>({ x: 0, y: 0 });
+  const [eyePosition, setEyePosition] = useState<{ left: Point; right: Point }>({
+    left: { x: 0, y: 0 },
+    right: { x: 0, y: 0 }
+  });
 
   useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePos({ x: event.clientX, y: event.clientY });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -16,11 +25,11 @@ const RustCrab = () => {
   }, []);
 
   useEffect(() => {
-    const leftEyeCenter = { x: 145, y: 160 };
-    const rightEyeCenter = { x: 215, y: 160 };
+    const leftEyeCenter: Point = { x: 145, y: 160 };
+    const rightEyeCenter: Point = { x: 215, y: 160 };
     const maxDistance = 3;
 
-    const calculateEyePosition = (eyeCenter: any) => {
+    const calculateEyePosition = (eyeCenter: Point): Point => {
       const angle = Math.atan2(mousePos.y - eyeCenter.y, mousePos.x - eyeCenter.x);
       return {
         x: Math.cos(angle) * maxDistance,
@@ -38,10 +47,12 @@ const RustCrab = () => {
     <div className="w-full h-96 flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden relative">
       {/* Base image */}
       <div className="relative w-64 h-64">
-        <img 
-          src="/" 
-          alt="Ferris base" 
-          className="w-full h-full"
+        <Image
+          src="https://rustacean.net/assets/rustacean-orig-noshadow.png"
+          alt="Ferris base"
+          fill
+          sizes="256px"
+          className="object-contain"
         />
         
         {/* Overlay for the tracking eyes */}

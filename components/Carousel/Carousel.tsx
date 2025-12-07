@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Sparkles } from "lucide-react";
 
 import {
@@ -59,11 +60,12 @@ const BooksCarousel = () => {
             >
               <div className="group relative flex h-64 w-full items-center justify-center sm:h-72">
                 <div className="animate-book-float relative h-full w-40 overflow-hidden rounded-[1.4rem] border border-white/60 bg-white shadow-xl transition duration-500 group-hover:scale-105 group-hover:shadow-2xl sm:w-48">
-                  <img
+                  <Image
                     src={book.image}
                     alt={book.title}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    sizes="(min-width: 1280px) 20vw, (min-width: 768px) 33vw, 60vw"
+                    className="object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-6 w-32 rounded-2xl border border-white/70 bg-white/90 px-3 py-2 text-center text-[11px] shadow sm:w-40 sm:px-4">

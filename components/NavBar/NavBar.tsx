@@ -24,7 +24,7 @@ const Navbar = () => {
             className="flex items-center gap-3 text-xl font-bold transition-colors hover:text-primary"
           >
             <BsBookHalf className="size-8" />
-            <span className="hidden sm:inline">Matt's Library</span>
+            <span className="hidden sm:inline">Matt&rsquo;s Library</span>
           </Link>
 
           {/* Desktop Navigation - Center */}
@@ -70,7 +70,7 @@ const Navbar = () => {
               <SheetHeader>
                 <SheetTitle className="flex items-center gap-3 text-xl">
                   <BsBookHalf className="size-8" />
-                  Matt's Library
+                  Matt&rsquo;s Library
                 </SheetTitle>
               </SheetHeader>
               <div className="mt-8 flex flex-col gap-4">
