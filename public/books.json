@@ -383,5 +383,16 @@
     "publishDate": "1953",
     "pages": "272",
     "type": "Fiction"
+  },
+  {
+    "ID": "36",
+    "image": "/Images/2666.jpg",
+    "title": "2666",
+    "author": "Roberto Bola\u00f1o",
+    "description": "Bola\u00f1o\u2019s sprawling posthumous epic spans continents, literary obsessions, and a haunting series of crimes in the desert city of Santa Teresa.",
+    "genre": "Fiction",
+    "type": "Fiction",
+    "publishDate": "2004",
+    "pages": "912"
   }
 ]

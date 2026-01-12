@@ -1,14 +1,14 @@
 [
   {
-    "ID": "W1",
-    "image": "/Images/2666.jpg",
-    "title": "2666",
-    "author": "Roberto Bola\u00f1o",
-    "description": "Bola\u00f1o\u2019s sprawling posthumous epic spans continents, literary obsessions, and a haunting series of crimes in the desert city of Santa Teresa.",
-    "genre": "Fiction",
+    "ID": "W6",
+    "image": "/Images/Frankenstein.jpg",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "description": "Mary Shelley’s Gothic novel follows Victor Frankenstein, a young scientist who creates a living being only to face the devastating moral, emotional, and societal consequences of playing God.",
+    "genre": "Novel",
+    "publishDate": "1818",
+    "pages": "280",
     "type": "Fiction",
-    "publishDate": "2004",
-    "pages": "912",
     "currentlyReading": true
   },
   {
@@ -57,18 +57,6 @@
     "type": "Non-fiction",
     "publishDate": "1942",
     "pages": "212",
-    "currentlyReading": false
-  },
-  {
-    "ID": "W6",
-    "image": "/Images/Frankenstein.jpg",
-    "title": "Frankenstein",
-    "author": "Mary Shelley",
-    "description": "Mary Shelley’s Gothic novel follows Victor Frankenstein, a young scientist who creates a living being only to face the devastating moral, emotional, and societal consequences of playing God.",
-    "genre": "Novel",
-    "publishDate": "1818",
-    "pages": "280",
-    "type": "Fiction",
     "currentlyReading": false
   },
   {
