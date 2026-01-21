@@ -1,15 +1,27 @@
 [
   {
-    "ID": "W6",
-    "image": "/Images/Frankenstein.jpg",
-    "title": "Frankenstein",
-    "author": "Mary Shelley",
-    "description": "Mary Shelley’s Gothic novel follows Victor Frankenstein, a young scientist who creates a living being only to face the devastating moral, emotional, and societal consequences of playing God.",
+    "ID": "W8",
+    "image": "/Images/EastOfEden.jpg",
+    "title": "East of Eden",
+    "author": "John Steinbeck",
+    "description": "Steinbeck’s epic novel traces the intertwined histories of the Trask and Hamilton families in California, exploring themes of good and evil, freedom of choice, and the idea that humans can overcome their own flawed nature.",
     "genre": "Novel",
-    "publishDate": "1818",
-    "pages": "280",
+    "publishDate": "1952",
+    "pages": "601",
     "type": "Fiction",
     "currentlyReading": true
+  },
+  {
+    "ID": "W10",
+    "image": "/Images/theStranger.jpg",
+    "title": "The Stranger",
+    "author": "Albert Camus",
+    "description": "Camus’s existential novel follows Meursault, a detached man whose indifferent responses to life and death expose the absurdity of existence and challenge society’s expectations of meaning, morality, and truth.",
+    "genre": "Novel",
+    "publishDate": "1942",
+    "pages": "123",
+    "type": "Fiction",
+    "currentlyReading": false
   },
   {
     "ID": "W2",
@@ -68,18 +80,6 @@
     "genre": "Novel",
     "publishDate": "1880",
     "pages": "796",
-    "type": "Fiction",
-    "currentlyReading": false
-  },
-  {
-    "ID": "W8",
-    "image": "/Images/EastOfEden.jpg",
-    "title": "East of Eden",
-    "author": "John Steinbeck",
-    "description": "Steinbeck’s epic novel traces the intertwined histories of the Trask and Hamilton families in California, exploring themes of good and evil, freedom of choice, and the idea that humans can overcome their own flawed nature.",
-    "genre": "Novel",
-    "publishDate": "1952",
-    "pages": "601",
     "type": "Fiction",
     "currentlyReading": false
   },

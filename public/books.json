@@ -394,5 +394,16 @@
     "type": "Fiction",
     "publishDate": "2004",
     "pages": "912"
+  },
+  {
+    "ID": "37",
+    "image": "/Images/Frankenstein.jpg",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "description": "Mary Shelley’s Gothic novel follows Victor Frankenstein, a young scientist who creates a living being only to face the devastating moral, emotional, and societal consequences of playing God.",
+    "genre": "Fiction",
+    "type": "Fiction",
+    "publishDate": "1818",
+    "pages": "280"
   }
 ]
