@@ -1,17 +1,5 @@
 [
   {
-    "ID": "W8",
-    "image": "/Images/EastOfEden.jpg",
-    "title": "East of Eden",
-    "author": "John Steinbeck",
-    "description": "Steinbeck’s epic novel traces the intertwined histories of the Trask and Hamilton families in California, exploring themes of good and evil, freedom of choice, and the idea that humans can overcome their own flawed nature.",
-    "genre": "Novel",
-    "publishDate": "1952",
-    "pages": "601",
-    "type": "Fiction",
-    "currentlyReading": true
-  },
-  {
     "ID": "W10",
     "image": "/Images/theStranger.jpg",
     "title": "The Stranger",
@@ -69,7 +57,7 @@
     "type": "Non-fiction",
     "publishDate": "1942",
     "pages": "212",
-    "currentlyReading": false
+    "currentlyReading": true
   },
   {
     "ID": "W7",

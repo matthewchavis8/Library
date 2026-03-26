@@ -405,5 +405,16 @@
     "type": "Fiction",
     "publishDate": "1818",
     "pages": "280"
+  },
+  {
+    "ID": "38",
+    "image": "/Images/EastOfEden.jpg",
+    "title": "East of Eden",
+    "author": "John Steinbeck",
+    "description": "Steinbeck's epic novel traces the intertwined histories of the Trask and Hamilton families in California, exploring themes of good and evil, freedom of choice, and the idea that humans can overcome their own flawed nature.",
+    "genre": "Novel",
+    "publishDate": "1952",
+    "pages": "601",
+    "type": "Fiction"
   }
 ]
