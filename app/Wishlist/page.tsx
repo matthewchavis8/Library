@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import {
   Bookmark,
@@ -37,6 +37,14 @@ const WishlistPage = () => {
 
     fetchWishlist();
   }, []);
+
+  const sortedWishlist = useMemo(
+    () =>
+      [...wishlist].sort(
+        (a, b) => Number(b.currentlyReading) - Number(a.currentlyReading),
+      ),
+    [wishlist],
+  );
 
   const renderTypeLabel = (item: WishlistBook) => {
     if (item.type === item.genre) {
@@ -75,9 +83,9 @@ const WishlistPage = () => {
           </div>
         )}
 
-        {!isLoading && !error && wishlist.length > 0 && (
+        {!isLoading && !error && sortedWishlist.length > 0 && (
           <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {wishlist.map((item) => (
+            {sortedWishlist.map((item) => (
               <div
                 key={item.ID}
                 className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
@@ -146,7 +154,7 @@ const WishlistPage = () => {
           </div>
         )}
 
-        {!isLoading && !error && wishlist.length === 0 && (
+        {!isLoading && !error && sortedWishlist.length === 0 && (
           <div className="py-16 text-center text-muted-foreground">
             <p>Nothing on the wish list yet—time to scout the next obsession.</p>
           </div>
@@ -157,5 +165,3 @@ const WishlistPage = () => {
 };
 
 export default WishlistPage;
-
-
