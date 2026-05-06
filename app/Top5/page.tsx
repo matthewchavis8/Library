@@ -6,7 +6,7 @@ import { Calendar, User, Bookmark, Crown } from "lucide-react";
 import { Book } from "./types";
 import { Badge } from "@/components/ui/badge";
 
-const TOP_BOOK_IDS = ["38", "31", "36", "37", "23"] as const;
+const TOP_BOOK_IDS = ["38", "31", "36", "37", "39"] as const;
 
 export default function Page() {
   const [topFiveBooks, setTopFiveBooks] = useState<Book[]>([]);

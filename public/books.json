@@ -416,5 +416,27 @@
     "publishDate": "1952",
     "pages": "601",
     "type": "Fiction"
+  },
+  {
+    "ID": "39",
+    "image": "/Images/CanneryRow.jpg",
+    "title": "Cannery Row",
+    "author": "John Steinbeck",
+    "description": "Steinbeck's short novel follows the residents of Cannery Row in Monterey, California, centering on Doc, Mack, and a loose community of outsiders whose rough lives are rendered with humor, sympathy, and melancholy.",
+    "genre": "Novel",
+    "publishDate": "1945",
+    "pages": "181",
+    "type": "Fiction"
+  },
+  {
+    "ID": "40",
+    "image": "/Images/MythOfSisyphus.webp",
+    "title": "The Myth of Sisyphus",
+    "author": "Albert Camus",
+    "description": "Camus meditates on the absurd, rebellion, and what it means to live without appeal in a seemingly meaningless universe.",
+    "genre": "Philosophy",
+    "publishDate": "1942",
+    "pages": "212",
+    "type": "Non-fiction"
   }
 ]

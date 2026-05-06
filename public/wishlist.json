@@ -1,17 +1,5 @@
 [
   {
-    "ID": "W10",
-    "image": "/Images/theStranger.jpg",
-    "title": "The Stranger",
-    "author": "Albert Camus",
-    "description": "Camus’s existential novel follows Meursault, a detached man whose indifferent responses to life and death expose the absurdity of existence and challenge society’s expectations of meaning, morality, and truth.",
-    "genre": "Novel",
-    "publishDate": "1942",
-    "pages": "123",
-    "type": "Fiction",
-    "currentlyReading": false
-  },
-  {
     "ID": "W2",
     "image": "/Images/GravityAndGrace.jpg",
     "title": "Gravity and Grace",
@@ -36,28 +24,40 @@
     "currentlyReading": false
   },
   {
-    "ID": "W4",
-    "image": "/Images/CrimeAndPunishment.webp",
-    "title": "Crime and Punishment",
-    "author": "Fyodor Dostoevsky",
-    "description": "Dostoevsky\u2019s psychological masterpiece follows Raskolnikov\u2019s inner turmoil after committing murder in St. Petersburg.",
-    "genre": "Classic Fiction",
-    "type": "Fiction",
-    "publishDate": "1866",
-    "pages": "671",
+    "ID": "W5",
+    "image": "/Images/ManagersPath.jpg",
+    "title": "The Manager's Path",
+    "author": "Camille Fournier",
+    "description": "A practical guide for engineers moving into management, covering feedback, coaching, team health, and the day-to-day realities of technical leadership.",
+    "genre": "Management",
+    "type": "Non-fiction",
+    "publishDate": "2017",
+    "pages": "244",
+    "currentlyReading": true
+  },
+  {
+    "ID": "W6",
+    "image": "/Images/StaffEngineerPath.jpg",
+    "title": "The Staff Engineer's Path",
+    "author": "Tanya Reilly",
+    "description": "A guide for individual contributors navigating staff-level work, with focus on scope, influence, technical direction, and leadership without direct authority.",
+    "genre": "Software Engineering",
+    "type": "Non-fiction",
+    "publishDate": "2022",
+    "pages": "356",
     "currentlyReading": false
   },
   {
-    "ID": "W5",
-    "image": "/Images/MythOfSisyphus.webp",
-    "title": "The Myth of Sisyphus",
-    "author": "Albert Camus",
-    "description": "Camus meditates on the absurd, rebellion, and what it means to live without appeal in a seemingly meaningless universe.",
-    "genre": "Philosophy",
+    "ID": "W8",
+    "image": "/Images/PhilosophyOfSoftwareDesign.jpg",
+    "title": "A Philosophy of Software Design",
+    "author": "John Ousterhout",
+    "description": "A guide to software design that focuses on reducing complexity through deeper modules, clearer interfaces, and disciplined design choices.",
+    "genre": "Computer Science",
     "type": "Non-fiction",
-    "publishDate": "1942",
-    "pages": "212",
-    "currentlyReading": true
+    "publishDate": "2018",
+    "pages": "190",
+    "currentlyReading": false
   },
   {
     "ID": "W7",
@@ -69,6 +69,18 @@
     "publishDate": "1880",
     "pages": "796",
     "type": "Fiction",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W1",
+    "image": "/Images/notesFromTheUnderground.jpg",
+    "title": "Notes from the Underground",
+    "author": "Fyodor Dostoevsky",
+    "description": "Dostoevsky’s novella follows an isolated former civil servant whose bitter, self-contradictory narration cuts against social optimism and rational self-interest.",
+    "genre": "Novel",
+    "type": "Fiction",
+    "publishDate": "1864",
+    "pages": "136",
     "currentlyReading": false
   },
   {
