@@ -60,13 +60,13 @@ const WishlistPage = () => {
         <div className="mb-8 md:mb-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-3 py-1 text-xs font-medium text-neutral-600">
             <NotebookPen className="size-3.5" />
-            Future reads
+            On my shelf
           </div>
           <h1 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
             Wish List
           </h1>
           <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-2xl">
-            Titles I&rsquo;m excited to pick up next—curated for inspiration, research, and world-building fuel.
+            Books I own and plan to read, with my current read shown first.
           </p>
         </div>
 

@@ -24,30 +24,6 @@
     "currentlyReading": false
   },
   {
-    "ID": "W5",
-    "image": "/Images/ManagersPath.jpg",
-    "title": "The Manager's Path",
-    "author": "Camille Fournier",
-    "description": "A practical guide for engineers moving into management, covering feedback, coaching, team health, and the day-to-day realities of technical leadership.",
-    "genre": "Management",
-    "type": "Non-fiction",
-    "publishDate": "2017",
-    "pages": "244",
-    "currentlyReading": true
-  },
-  {
-    "ID": "W6",
-    "image": "/Images/StaffEngineerPath.jpg",
-    "title": "The Staff Engineer's Path",
-    "author": "Tanya Reilly",
-    "description": "A guide for individual contributors navigating staff-level work, with focus on scope, influence, technical direction, and leadership without direct authority.",
-    "genre": "Software Engineering",
-    "type": "Non-fiction",
-    "publishDate": "2022",
-    "pages": "356",
-    "currentlyReading": false
-  },
-  {
     "ID": "W8",
     "image": "/Images/PhilosophyOfSoftwareDesign.jpg",
     "title": "A Philosophy of Software Design",
@@ -72,18 +48,6 @@
     "currentlyReading": false
   },
   {
-    "ID": "W1",
-    "image": "/Images/notesFromTheUnderground.jpg",
-    "title": "Notes from the Underground",
-    "author": "Fyodor Dostoevsky",
-    "description": "Dostoevsky’s novella follows an isolated former civil servant whose bitter, self-contradictory narration cuts against social optimism and rational self-interest.",
-    "genre": "Novel",
-    "type": "Fiction",
-    "publishDate": "1864",
-    "pages": "136",
-    "currentlyReading": false
-  },
-  {
     "ID": "W9",
     "image": "/Images/MobyDick.jpg",
     "title": "Moby-Dick",
@@ -93,6 +57,42 @@
     "publishDate": "1851",
     "pages": "635",
     "type": "Fiction",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W10",
+    "image": "/Images/TheIdiot.jpg",
+    "title": "The Idiot",
+    "author": "Fyodor Dostoevsky",
+    "description": "Dostoevsky's novel follows the compassionate Prince Myshkin as his return to Russian society draws him into a destructive web of love, jealousy, betrayal, and moral conflict.",
+    "genre": "Novel",
+    "type": "Fiction",
+    "publishDate": "1869",
+    "pages": "784",
+    "currentlyReading": true
+  },
+  {
+    "ID": "W11",
+    "image": "/Images/ThePearl.jpg",
+    "title": "The Pearl",
+    "author": "John Steinbeck",
+    "description": "Steinbeck's novella follows a pearl diver whose discovery of a priceless pearl promises a better life for his family but instead awakens greed, suspicion, and tragedy.",
+    "genre": "Novella",
+    "type": "Fiction",
+    "publishDate": "1947",
+    "pages": "96",
+    "currentlyReading": false
+  },
+  {
+    "ID": "W12",
+    "image": "/Images/TheSunAlsoRisesDeluxe.jpg",
+    "title": "The Sun Also Rises",
+    "author": "Ernest Hemingway",
+    "description": "Hemingway's novel follows Jake Barnes and a group of disillusioned expatriates from Paris to Pamplona as friendship, desire, and rivalry unfold around the running of the bulls.",
+    "genre": "Novel",
+    "type": "Fiction",
+    "publishDate": "1926",
+    "pages": "256",
     "currentlyReading": false
   }
 ]

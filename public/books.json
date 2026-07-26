@@ -438,5 +438,27 @@
     "publishDate": "1942",
     "pages": "212",
     "type": "Non-fiction"
+  },
+  {
+    "ID": "41",
+    "image": "/Images/MasterAndMargarita.jpeg",
+    "title": "The Master and Margarita",
+    "author": "Mikhail Bulgakov",
+    "description": "Bulgakov's satirical novel follows the Devil and his entourage as they descend upon Soviet Moscow, intertwining their chaos with the story of the Master, Margarita, and Pontius Pilate.",
+    "genre": "Novel",
+    "publishDate": "1967",
+    "pages": "448",
+    "type": "Fiction"
+  },
+  {
+    "ID": "42",
+    "image": "/Images/notesFromTheUnderground.jpg",
+    "title": "Notes from the Underground",
+    "author": "Fyodor Dostoevsky",
+    "description": "Dostoevsky’s novella follows an isolated former civil servant whose bitter, self-contradictory narration cuts against social optimism and rational self-interest.",
+    "genre": "Novel",
+    "type": "Fiction",
+    "publishDate": "1864",
+    "pages": "136"
   }
 ]
