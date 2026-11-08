@@ -143,7 +143,7 @@ const es: Dictionary = {
     note: "si solo lees cinco",
     title: "Mi Top 5",
     intro:
-      "De todo el estante, estos son los que siguen dando vueltas en mi cabeza. El orden a veces cambia. La lista, casi nunca.",
+      "Aviso: esta lista es bastante volátil y cambia mucho.",
     favorite: "mi favorito",
   },
   upNext: {
