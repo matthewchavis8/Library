@@ -79,3 +79,15 @@ html.lenis body {
     display: none;
   }
 }
+
+/* Hidden for a moment while a saved language loads */
+html.i18n-pending body {
+  opacity: 0;
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.97);
+  }
+}

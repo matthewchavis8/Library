@@ -9,9 +9,7 @@ export default function ShelfPage() {
   const books = getBooks();
   return (
     <>
-      <PageHeader note="everything I've finished" title="The Shelf">
-        All books
-      </PageHeader>
+      <PageHeader note="shelf.note" title="shelf.title" intro="shelf.intro" />
       <ShelfBrowser books={books} />
     </>
   );

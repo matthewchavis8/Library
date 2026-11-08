@@ -11,6 +11,7 @@ import BookCover from "./BookCover";
 import BookDetail from "./BookDetail";
 import { cn } from "@/lib/utils";
 import type { Book } from "@/lib/books";
+import { useT } from "@/lib/i18n";
 
 type Props = {
   books: Book[];
@@ -31,6 +32,7 @@ export default function BookGrid({
 }: Props) {
   const [open, setOpen] = useState<Book | null>(null);
   const reduce = useReducedMotion();
+  const { t } = useT();
 
   return (
     <LayoutGroup id={id}>
@@ -66,7 +68,7 @@ export default function BookGrid({
       <BookDetail
         book={open}
         onClose={() => setOpen(null)}
-        note={open?.currentlyReading ? "reading this now" : undefined}
+        note={open?.currentlyReading ? t("upNext.readingNow") : undefined}
       />
     </LayoutGroup>
   );

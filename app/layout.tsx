@@ -3,6 +3,8 @@ import { Caveat, Fraunces, Inter } from "next/font/google";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import { LanguageSync } from "@/lib/i18n";
+import { languageBootScript } from "@/lib/i18n/boot";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -36,10 +38,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${fraunces.variable} ${inter.variable} ${caveat.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: languageBootScript }} />
+      </head>
       <body className="flex min-h-dvh flex-col">
         <SmoothScroll />
+        <LanguageSync />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

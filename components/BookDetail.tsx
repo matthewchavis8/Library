@@ -8,6 +8,7 @@ import BookCover from "./BookCover";
 import HandNote from "./HandNote";
 import { setScrollLocked } from "./SmoothScroll";
 import type { Book } from "@/lib/books";
+import { useT } from "@/lib/i18n";
 
 type Props = {
   book: Book | null;
@@ -20,6 +21,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 /** A book opened up: big cover, full blurb, the details. */
 export default function BookDetail({ book, onClose, note }: Props) {
   const drag = useDragControls();
+  const { t, genre, description } = useT();
 
   useEffect(() => {
     setScrollLocked(!!book);
@@ -67,7 +69,7 @@ export default function BookDetail({ book, onClose, note }: Props) {
 
                 <Dialog.Close className="absolute top-5 right-5 hidden size-10 items-center justify-center rounded-full text-muted transition-colors hover:bg-paper hover:text-ink sm:flex">
                   <X className="size-5" />
-                  <span className="sr-only">Close</span>
+                  <span className="sr-only">{t("book.close")}</span>
                 </Dialog.Close>
 
                 <div className="grid gap-7 sm:grid-cols-[15rem_1fr] sm:gap-10">
@@ -90,17 +92,17 @@ export default function BookDetail({ book, onClose, note }: Props) {
                       {book.title}
                     </Dialog.Title>
                     <p className="mt-2 text-lg text-ink-soft">
-                      by {book.author}
+                      {t("book.by", { author: book.author })}
                     </p>
 
                     <p className="mt-6 leading-relaxed text-ink-soft">
-                      {book.description}
+                      {description(book)}
                     </p>
 
                     <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-line pt-5 text-sm">
-                      <Fact label="Genre" value={book.genre} />
-                      <Fact label="Published" value={book.publishDate} />
-                      <Fact label="Pages" value={book.pages} />
+                      <Fact label={t("book.genre")} value={genre(book.genre)} />
+                      <Fact label={t("book.published")} value={book.publishDate} />
+                      <Fact label={t("book.pages")} value={book.pages} />
                     </dl>
                   </motion.div>
                 </div>

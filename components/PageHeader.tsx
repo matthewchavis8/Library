@@ -1,21 +1,25 @@
+"use client";
+
 import HandNote from "./HandNote";
+import { useT, type MessageKey } from "@/lib/i18n";
 
 type Props = {
-  note: string;
-  title: React.ReactNode;
-  children?: React.ReactNode;
+  note: MessageKey;
+  title: MessageKey;
+  intro?: MessageKey;
 };
 
-export default function PageHeader({ note, title, children }: Props) {
+export default function PageHeader({ note, title, intro }: Props) {
+  const { t } = useT();
   return (
     <header className="mx-auto max-w-6xl px-4 pt-14 pb-10 sm:px-6 sm:pt-20 sm:pb-14 lg:px-8">
-      <HandNote>{note}</HandNote>
+      <HandNote>{t(note)}</HandNote>
       <h1 className="mt-5 text-5xl leading-[1.02] font-normal sm:text-6xl lg:text-7xl">
-        {title}
+        {t(title)}
       </h1>
-      {children && (
+      {intro && (
         <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
-          {children}
+          {t(intro)}
         </p>
       )}
     </header>

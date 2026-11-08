@@ -9,10 +9,13 @@ import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/nav";
+import { useT } from "@/lib/i18n";
+import { LanguageMenu, LanguageToggle } from "./LanguagePicker";
 
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { t } = useT();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,7 +38,8 @@ export default function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
         <Wordmark />
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
+        <ul className="flex items-center gap-1">
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
             return (
@@ -47,7 +51,7 @@ export default function Navbar() {
                     active ? "text-ink" : "text-muted hover:text-ink",
                   )}
                 >
-                  {link.label}
+                  {t(link.key)}
                   {active && (
                     <motion.span
                       layoutId="nav-underline"
@@ -60,11 +64,13 @@ export default function Navbar() {
             );
           })}
         </ul>
+        <LanguageMenu />
+        </div>
 
         <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
           <Dialog.Trigger className="flex size-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-paper-deep md:hidden">
             <Menu className="size-5" />
-            <span className="sr-only">Open menu</span>
+            <span className="sr-only">{t("nav.openMenu")}</span>
           </Dialog.Trigger>
           <AnimatePresence>
             {menuOpen && (
@@ -91,7 +97,7 @@ export default function Navbar() {
                       </Dialog.Title>
                       <Dialog.Close className="flex size-10 items-center justify-center rounded-full hover:bg-paper-deep">
                         <X className="size-5" />
-                        <span className="sr-only">Close menu</span>
+                        <span className="sr-only">{t("nav.closeMenu")}</span>
                       </Dialog.Close>
                     </div>
                     <ul className="mt-10 flex flex-col">
@@ -110,7 +116,7 @@ export default function Navbar() {
                               pathname === link.href ? "text-accent" : "text-ink",
                             )}
                           >
-                            {link.label}
+                            {t(link.key)}
                             <span className="font-sans text-xs text-muted">
                               0{i + 1}
                             </span>
@@ -118,9 +124,12 @@ export default function Navbar() {
                         </motion.li>
                       ))}
                     </ul>
-                    <p className="mt-auto font-hand text-xl text-muted">
-                      happy reading
-                    </p>
+                    <div className="mt-auto space-y-6">
+                      <LanguageToggle />
+                      <p className="font-hand text-xl text-muted">
+                        {t("nav.happyReading")}
+                      </p>
+                    </div>
                   </motion.div>
                 </Dialog.Content>
               </Dialog.Portal>
