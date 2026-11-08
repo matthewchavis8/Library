@@ -44,7 +44,7 @@ export default function UpNextPage() {
 
       <section className="mx-auto max-w-6xl px-4 pt-20 sm:px-6 lg:px-8">
         <Reveal className="mb-9 border-b border-line pb-5">
-          <h2 className="text-3xl sm:text-4xl">Waiting their turn</h2>
+          <h2 className="text-3xl sm:text-4xl">Wishlist</h2>
           <p className="mt-1 text-sm text-muted">{waiting.length} books</p>
         </Reveal>
         <BookGrid id="waiting" books={waiting} />

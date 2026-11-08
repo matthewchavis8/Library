@@ -10,8 +10,7 @@ export default function ShelfPage() {
   return (
     <>
       <PageHeader note="everything I've finished" title="The Shelf">
-        All {books.length} of them, newest first. Search, filter by genre, or
-        tap a cover to read a little about it.
+        All books
       </PageHeader>
       <ShelfBrowser books={books} />
     </>

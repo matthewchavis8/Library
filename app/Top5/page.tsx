@@ -45,7 +45,7 @@ export default function TopFivePage() {
                       mark="arrow-left"
                       className="absolute top-8 left-full ml-3 hidden rotate-[-6deg] text-2xl whitespace-nowrap lg:inline-flex"
                     >
-                      my favorite, ever
+                      my favorite
                     </HandNote>
                   )}
                 </Reveal>
@@ -56,7 +56,7 @@ export default function TopFivePage() {
                   </span>
                   {i === 0 && (
                     <HandNote className="mt-4 block text-2xl lg:hidden">
-                      my favorite, ever
+                      my favorite
                     </HandNote>
                   )}
                   <h2 className="mt-5 text-4xl leading-tight sm:text-5xl">

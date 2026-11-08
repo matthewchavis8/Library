@@ -24,8 +24,8 @@ export default function HomePage() {
         <div>
           <HandNote>hi, I&rsquo;m Matt</HandNote>
           <h1 className="mt-6 text-[2.9rem] leading-[1.02] font-normal sm:text-7xl lg:text-[5.25rem]">
-            A shelf of books I&rsquo;ve{" "}
-            <em className="text-accent italic">actually</em> read.
+            A shelf of books I have{" "}
+            <em className="text-accent italic">read.</em>
           </h1>
           <p className="mt-7 max-w-lg text-lg leading-relaxed text-ink-soft">
             I started keeping this list my freshman year. Everything here I
@@ -118,7 +118,7 @@ export default function HomePage() {
                   if you only read five
                 </HandNote>
                 <h2 className="mt-3 text-4xl leading-tight font-normal sm:text-5xl">
-                  My top five, ranked and defended.
+                  My Top Five
                 </h2>
                 <span className="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-medium text-paper/80 transition-colors group-hover:text-paper">
                   See the list
