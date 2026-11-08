@@ -1,128 +1,159 @@
-"use client";
-
-import { BookOpen, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import Carousel from "@/components/Carousel/Carousel";
+import { ArrowRight } from "lucide-react";
+import BookCover from "@/components/BookCover";
+import BookGrid from "@/components/BookGrid";
+import HandNote from "@/components/HandNote";
+import Reveal from "@/components/Reveal";
+import {
+  getBooks,
+  getCurrentlyReading,
+  getStats,
+  getTopFive,
+} from "@/lib/books";
 
-const HomePage = () => {
+export default function HomePage() {
+  const stats = getStats();
+  const reading = getCurrentlyReading();
+  const recent = getBooks().slice(0, 6);
+  const topFive = getTopFive();
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full overflow-hidden bg-gradient-to-b from-rose-50/60 via-white to-white py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col-reverse gap-10 lg:grid lg:grid-cols-[1.05fr,0.95fr] lg:items-center lg:gap-16">
-            {/* Left Content */}
-            <div className="space-y-6 sm:space-y-7 text-center lg:text-left">
-              <div className="flex items-center justify-center lg:justify-start">
-                <Badge variant="outline" className="backdrop-blur-sm bg-white/80 border-primary/20">
-                  <Sparkles className="mr-2 size-4" />
-                  Curated Collection
-                </Badge>
-              </div>
+    <>
+      {/* Hero */}
+      <section className="mx-auto grid max-w-6xl items-center gap-14 px-4 pt-12 pb-20 sm:px-6 sm:pt-20 lg:grid-cols-[1.25fr_1fr] lg:gap-10 lg:px-8 lg:pt-24 lg:pb-28">
+        <div>
+          <HandNote>hi, I&rsquo;m Matt</HandNote>
+          <h1 className="mt-6 text-[2.9rem] leading-[1.02] font-normal sm:text-7xl lg:text-[5.25rem]">
+            A shelf of books I&rsquo;ve{" "}
+            <em className="text-accent italic">actually</em> read.
+          </h1>
+          <p className="mt-7 max-w-lg text-lg leading-relaxed text-ink-soft">
+            I started keeping this list my freshman year. Everything here I
+            finished cover to cover. Some changed how I think, and a few kept
+            me up way too late.
+          </p>
 
-              <div className="space-y-3 sm:space-y-4">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-                  Welcome to
-                  <span className="block text-primary mt-2">
-                    Matt&rsquo;s Library
-                  </span>
-                </h1>
-                <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                  Discover a carefully curated collection of books spanning fiction, non-fiction, horror, and computer science. Each book represents a journey worth taking.
-                </p>
-              </div>
+          <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-5">
+            <Stat value={stats.books} label="books finished" />
+            <Stat value={stats.authors} label="authors" />
+            <Stat value={stats.pages.toLocaleString()} label="pages turned" />
+          </dl>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-                <Link href="/Books">
-                  <Button size="lg" className="w-full sm:w-auto group">
-                    <BookOpen className="mr-2 size-5" />
-                    Browse Collection
-                    <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link href="/Top5">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    View Top 5
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Stats */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 pt-4">
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold">33+</div>
-                  <div className="text-sm text-muted-foreground">Books</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold">10+</div>
-                  <div className="text-sm text-muted-foreground">Genres</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold">20+</div>
-                  <div className="text-sm text-muted-foreground">Authors</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Content - Carousel */}
-            <div className="w-full">
-              <div className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none rounded-2xl overflow-hidden border bg-white/70 shadow-xl p-4 sm:p-6">
-                <Carousel />
-              </div>
-            </div>
+          <div className="mt-11 flex flex-wrap items-center gap-x-7 gap-y-4">
+            <Link
+              href="/Books"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[0.95rem] font-medium text-paper transition-colors hover:bg-accent-deep"
+            >
+              Browse the shelf
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/Top5"
+              className="text-[0.95rem] font-medium text-ink underline decoration-line decoration-2 underline-offset-[6px] transition-colors hover:decoration-accent"
+            >
+              See my top five
+            </Link>
           </div>
         </div>
+
+        {reading && (
+          <Reveal delay={0.15} className="relative mx-auto w-full max-w-sm">
+            <Link href="/Wishlist" className="group block">
+              <div className="relative rounded-[28px] bg-card p-8 pb-7 shadow-[0_1px_0_var(--color-line),0_30px_60px_-30px_rgba(35,28,21,0.35)] ring-1 ring-line sm:p-10 sm:pb-8">
+                <HandNote
+                  mark="arrow-down"
+                  className="absolute -top-5 left-6 rotate-[-4deg] text-2xl sm:-left-10"
+                >
+                  now reading
+                </HandNote>
+                <div className="mx-auto w-44 rotate-2 transition-transform duration-700 ease-(--ease-soft) group-hover:rotate-0 sm:w-52">
+                  <BookCover book={reading} priority sizes="220px" />
+                </div>
+                <div className="mt-8 text-center">
+                  <p className="font-serif text-2xl">{reading.title}</p>
+                  <p className="mt-1 text-sm text-muted">
+                    {reading.author} · {reading.pages} pages
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </Reveal>
+        )}
       </section>
 
-      {/* Features Section */}
-      <section className="py-14 sm:py-16 lg:py-24">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why This Library?
-            </h2>
-            <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-              More than just a collection, it&rsquo;s a reflection of intellectual curiosity and diverse interests.
-            </p>
+      {/* Recently finished */}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <Reveal className="mb-9 flex items-end justify-between gap-6 border-b border-line pb-5">
+          <div>
+            <HandNote mark="none" className="text-xl">fresh off the nightstand</HandNote>
+            <h2 className="mt-1 text-3xl sm:text-4xl">Recently finished</h2>
           </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl border p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <BookOpen className="size-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Diverse Collection</h3>
-              <p className="text-muted-foreground">
-                From classic horror to modern computer science, explore books across multiple genres and eras.
-              </p>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl border p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Sparkles className="size-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Carefully Curated</h3>
-              <p className="text-muted-foreground">
-                Each book has been personally read and selected for its unique value and impact.
-              </p>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl border p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <ArrowRight className="size-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Easy to Explore</h3>
-              <p className="text-muted-foreground">
-                Filter by genre, author, or publication date. Search and paginate through the entire collection effortlessly.
-              </p>
-            </div>
-          </div>
-        </div>
+          <Link
+            href="/Books"
+            className="group hidden shrink-0 items-center gap-1.5 text-sm font-medium text-ink-soft hover:text-accent sm:inline-flex"
+          >
+            All {stats.books} books
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </Reveal>
+        <BookGrid id="recent" books={recent} variant="row" />
+        <Link
+          href="/Books"
+          className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft sm:hidden"
+        >
+          All {stats.books} books <ArrowRight className="size-4" />
+        </Link>
       </section>
+
+      {/* Top five teaser */}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <Reveal>
+          <Link
+            href="/Top5"
+            className="group relative block overflow-hidden rounded-[32px] bg-ink px-7 py-12 text-paper sm:px-14 sm:py-16"
+          >
+            <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
+              <div>
+                <HandNote mark="none" className="text-2xl text-accent-soft">
+                  if you only read five
+                </HandNote>
+                <h2 className="mt-3 text-4xl leading-tight font-normal sm:text-5xl">
+                  My top five, ranked and defended.
+                </h2>
+                <span className="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-medium text-paper/80 transition-colors group-hover:text-paper">
+                  See the list
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </div>
+              <div className="flex justify-center pl-6 sm:pl-10">
+                {topFive.map((book, i) => (
+                  <div
+                    key={book.ID}
+                    className="-ml-6 w-1/4 max-w-28 transition-transform duration-500 ease-(--ease-soft) group-hover:-translate-y-2 sm:-ml-10"
+                    style={{
+                      rotate: `${(i - 2) * 4}deg`,
+                      transitionDelay: `${i * 40}ms`,
+                      zIndex: 5 - i,
+                    }}
+                  >
+                    <BookCover book={book} sizes="120px" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Link>
+        </Reveal>
+      </section>
+    </>
+  );
+}
+
+function Stat({ value, label }: { value: React.ReactNode; label: string }) {
+  return (
+    <div>
+      <dt className="sr-only">{label}</dt>
+      <dd className="font-serif text-4xl leading-none text-ink">{value}</dd>
+      <dd className="mt-2 text-sm text-muted">{label}</dd>
     </div>
   );
-};
-
-export default HomePage;
+}

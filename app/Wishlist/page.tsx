@@ -1,167 +1,54 @@
-"use client";
+import type { Metadata } from "next";
+import BookCover from "@/components/BookCover";
+import BookGrid from "@/components/BookGrid";
+import HandNote from "@/components/HandNote";
+import PageHeader from "@/components/PageHeader";
+import Reveal from "@/components/Reveal";
+import { getCurrentlyReading, getWishlist } from "@/lib/books";
 
-import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
-import {
-  Bookmark,
-  Calendar,
-  Loader2,
-  NotebookPen,
-  Star,
-  User,
-} from "lucide-react";
-import { WishlistBook } from "./types";
-import { Badge } from "@/components/ui/badge";
+export const metadata: Metadata = { title: "Up Next" };
 
-const WishlistPage = () => {
-  const [wishlist, setWishlist] = useState<WishlistBook[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchWishlist = async () => {
-      try {
-        const res = await fetch("/wishlist.json");
-        if (!res.ok) {
-          throw new Error("Unable to load wish list");
-        }
-        const data: WishlistBook[] = await res.json();
-        setWishlist(data);
-      } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : "Unknown error";
-        setError(message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchWishlist();
-  }, []);
-
-  const sortedWishlist = useMemo(
-    () =>
-      [...wishlist].sort(
-        (a, b) => Number(b.currentlyReading) - Number(a.currentlyReading),
-      ),
-    [wishlist],
-  );
-
-  const renderTypeLabel = (item: WishlistBook) => {
-    if (item.type === item.genre) {
-      if (item.type === "Fiction") return "Fiction Novel";
-      if (item.type === "Non-fiction") return "Non-fiction Book";
-    }
-    return item.type;
-  };
+export default function UpNextPage() {
+  const reading = getCurrentlyReading();
+  const waiting = getWishlist().filter((b) => !b.currentlyReading);
 
   return (
-    <section className="py-12 min-h-screen">
-      <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8">
-        <div className="mb-8 md:mb-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-3 py-1 text-xs font-medium text-neutral-600">
-            <NotebookPen className="size-3.5" />
-            On my shelf
-          </div>
-          <h1 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
-            Wish List
-          </h1>
-          <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-2xl">
-            Books I own and plan to read, with my current read shown first.
-          </p>
-        </div>
+    <>
+      <PageHeader note="the nightstand pile" title="Up Next">
+        Books I own and haven&rsquo;t gotten to yet. The one on top is open on
+        my nightstand right now.
+      </PageHeader>
 
-        {isLoading && (
-          <div className="flex flex-col items-center gap-2 py-20 text-muted-foreground">
-            <Loader2 className="size-5 animate-spin" />
-            <span>Gathering ideas...</span>
-          </div>
-        )}
+      {reading && (
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="relative grid items-center gap-10 rounded-[32px] bg-card p-8 ring-1 ring-line sm:grid-cols-[auto_1fr] sm:gap-14 sm:p-12">
+            <div className="mx-auto w-44 -rotate-2 sm:w-52">
+              <BookCover book={reading} priority sizes="220px" />
+            </div>
+            <div>
+              <HandNote className="text-2xl">reading this now</HandNote>
+              <h2 className="mt-5 text-4xl leading-tight sm:text-5xl">
+                {reading.title}
+              </h2>
+              <p className="mt-2 text-lg text-ink-soft">by {reading.author}</p>
+              <p className="mt-6 max-w-xl leading-relaxed text-ink-soft">
+                {reading.description}
+              </p>
+              <p className="mt-6 text-sm text-muted">
+                {reading.genre} · {reading.publishDate} · {reading.pages} pages
+              </p>
+            </div>
+          </Reveal>
+        </section>
+      )}
 
-        {error && !isLoading && (
-          <div className="rounded-xl border border-destructive/40 bg-destructive/5 p-6 text-destructive">
-            <p>{error}</p>
-          </div>
-        )}
-
-        {!isLoading && !error && sortedWishlist.length > 0 && (
-          <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {sortedWishlist.map((item) => (
-              <div
-                key={item.ID}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
-              >
-                {item.currentlyReading && (
-                  <div className="absolute left-3 top-3 z-10">
-                    <Badge className="flex items-center gap-1 rounded-full border border-amber-200 bg-amber-50/90 px-3 py-1 text-xs font-medium text-amber-900">
-                      <Star className="size-3 fill-amber-500 text-amber-500" />
-                      Currently reading
-                    </Badge>
-                  </div>
-                )}
-                <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
-                </div>
-
-                <div className="flex flex-1 flex-col px-4 pb-4 pt-3 md:px-5 md:pb-5 md:pt-4">
-                  <div className="mb-3">
-                    <div className="flex items-start justify-between gap-2">
-                      <h2 className="text-sm md:text-base font-semibold leading-snug text-neutral-900 line-clamp-2">
-                        {item.title}
-                      </h2>
-                      <Badge
-                        variant="outline"
-                        className="text-[10px] font-medium rounded-full border-neutral-200 bg-white/80 text-neutral-700"
-                      >
-                        {renderTypeLabel(item)}
-                      </Badge>
-                    </div>
-                    <p className="mt-2 flex items-center gap-1 text-xs text-neutral-500">
-                      <User className="size-3" />
-                      <span className="truncate">{item.author}</span>
-                    </p>
-                  </div>
-
-                  <p className="mb-3 text-xs md:text-sm text-neutral-500 line-clamp-3">
-                    {item.description}
-                  </p>
-
-                  <div className="mt-4 space-y-2 text-[11px] text-neutral-500">
-                    <div className="flex flex-wrap gap-2">
-                      <Badge className="rounded-full bg-neutral-900 text-white text-[10px] px-2 py-0.5">
-                        {item.genre}
-                      </Badge>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="inline-flex items-center gap-1">
-                        <Calendar className="size-3" />
-                        <span>{item.publishDate}</span>
-                      </span>
-                      <span className="inline-flex items-center gap-1">
-                        <Bookmark className="size-3" />
-                        <span>{item.pages} pages</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {!isLoading && !error && sortedWishlist.length === 0 && (
-          <div className="py-16 text-center text-muted-foreground">
-            <p>Nothing on the wish list yet—time to scout the next obsession.</p>
-          </div>
-        )}
-      </div>
-    </section>
+      <section className="mx-auto max-w-6xl px-4 pt-20 sm:px-6 lg:px-8">
+        <Reveal className="mb-9 border-b border-line pb-5">
+          <h2 className="text-3xl sm:text-4xl">Waiting their turn</h2>
+          <p className="mt-1 text-sm text-muted">{waiting.length} books</p>
+        </Reveal>
+        <BookGrid id="waiting" books={waiting} />
+      </section>
+    </>
   );
-};
-
-export default WishlistPage;
+}

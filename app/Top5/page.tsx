@@ -1,167 +1,80 @@
-"use client";
+import type { Metadata } from "next";
+import BookCover from "@/components/BookCover";
+import HandNote from "@/components/HandNote";
+import PageHeader from "@/components/PageHeader";
+import Reveal from "@/components/Reveal";
+import { cn } from "@/lib/utils";
+import { getTopFive } from "@/lib/books";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { Calendar, User, Bookmark, Crown } from "lucide-react";
-import { Book } from "./types";
-import { Badge } from "@/components/ui/badge";
+export const metadata: Metadata = { title: "Top 5" };
 
-const TOP_BOOK_IDS = ["38", "31", "36", "41", "39"] as const;
-
-export default function Page() {
-  const [topFiveBooks, setTopFiveBooks] = useState<Book[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const res = await fetch("/books.json");
-        if (!res.ok) {
-          throw new Error("Error fetching data");
-        }
-        const data: Book[] = await res.json();
-
-        const filtered = data.filter((book) =>
-          TOP_BOOK_IDS.includes(book.ID as (typeof TOP_BOOK_IDS)[number])
-        );
-
-        const sortedFiltered = TOP_BOOK_IDS
-          .map((id) => filtered.find((book) => book.ID === id))
-          .filter((book): book is Book => book !== undefined);
-
-        setTopFiveBooks(sortedFiltered);
-        setIsLoading(false);
-      } catch (error: unknown) {
-        const message =
-          error instanceof Error ? error.message : "Unknown error";
-        console.error(error);
-        setError(message);
-        setIsLoading(false);
-      }
-    };
-
-    fetchBooks();
-  }, []);
-
-  const getTypeLabel = (book: Book) => {
-    if (book.type === book.genre) {
-      if (book.type === "Fiction") {
-        return "Fiction Novel";
-      }
-      if (book.type === "Non-fiction") {
-        return "Non-fiction Book";
-      }
-    }
-    return book.type;
-  };
+export default function TopFivePage() {
+  const books = getTopFive();
 
   return (
-    <section className="py-12 min-h-screen">
-      <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-6 md:mb-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-3 py-1 text-xs font-medium text-neutral-600">
-            <Crown className="size-3.5 text-yellow-500" />
-            Curated selection
-          </div>
-          <h1 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
-            Matt&apos;s Top Five Books
-          </h1>
-          <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-2xl">
-            A hand-picked list of favorites across fiction, horror, sci-fi, and more.
-          </p>
-        </div>
+    <>
+      <PageHeader note="if you only read five" title="My Top 5">
+        Out of everything on the shelf, these are the ones I keep thinking
+        about. The order changes sometimes. The list mostly doesn&rsquo;t.
+      </PageHeader>
 
-        {/* Loading / Error States */}
-        {isLoading && (
-          <div className="py-16 text-center text-muted-foreground">
-            <p>Loading top picks...</p>
-          </div>
-        )}
-
-        {error && !isLoading && (
-          <div className="py-16 text-center text-red-500">
-            <p>Error: {error}</p>
-          </div>
-        )}
-
-        {!isLoading && !error && topFiveBooks.length > 0 && (
-          <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {topFiveBooks.map((book, index) => (
+      <ol className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        {books.map((book, i) => {
+          const flip = i % 2 === 1;
+          return (
+            <li
+              key={book.ID}
+              className="border-t border-line py-14 first:border-t-0 first:pt-4 sm:py-20"
+            >
               <div
-                key={book.ID}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+                className={cn(
+                  "grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-16",
+                  flip && "md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]",
+                )}
               >
-                {/* Rank badge */}
-                <div className="absolute left-3 top-3 z-10">
-                  <Badge className="rounded-full bg-neutral-900 text-white text-xs px-3 py-1 border-0 flex items-center gap-1">
-                    <span>#{index + 1}</span>
-                  </Badge>
-                </div>
-
-                {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
-                  <Image
-                    src={book.image}
-                    alt={book.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="flex flex-1 flex-col px-4 pb-4 pt-3 md:px-5 md:pb-5 md:pt-4">
-                  <div className="mb-3">
-                    <h2 className="text-sm md:text-base font-semibold leading-snug text-neutral-900 line-clamp-2">
-                      {book.title}
-                    </h2>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      <Badge className="text-[10px] font-medium rounded-full px-2 py-0.5 bg-neutral-100 text-neutral-600 border-0">
-                        {book.genre}
-                      </Badge>
-                      <Badge
-                        variant="outline"
-                        className="text-[10px] font-medium rounded-full border-neutral-200 bg-white/80 text-neutral-700"
-                      >
-                        {getTypeLabel(book)}
-                      </Badge>
-                    </div>
-                    <p className="mt-2 flex items-center gap-1 text-xs text-neutral-500">
-                      <User className="size-3" />
-                      <span className="truncate">{book.author}</span>
-                    </p>
+                <Reveal className={cn("relative mx-auto w-56 sm:w-64", flip && "md:order-2")}>
+                  <div className={cn("transition-transform duration-700", flip ? "rotate-2" : "-rotate-2")}>
+                    <BookCover
+                      book={book}
+                      sizes="(min-width: 640px) 256px, 224px"
+                      priority={i === 0}
+                    />
                   </div>
+                  {i === 0 && (
+                    <HandNote
+                      mark="arrow-left"
+                      className="absolute top-8 left-full ml-3 hidden rotate-[-6deg] text-2xl whitespace-nowrap lg:inline-flex"
+                    >
+                      my favorite, ever
+                    </HandNote>
+                  )}
+                </Reveal>
 
-                  <p className="mb-4 text-xs md:text-sm text-neutral-500 line-clamp-3">
+                <Reveal delay={0.1}>
+                  <span className="font-serif text-7xl leading-none text-accent italic sm:text-8xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {i === 0 && (
+                    <HandNote className="mt-4 block text-2xl lg:hidden">
+                      my favorite, ever
+                    </HandNote>
+                  )}
+                  <h2 className="mt-5 text-4xl leading-tight sm:text-5xl">
+                    {book.title}
+                  </h2>
+                  <p className="mt-2 text-lg text-ink-soft">by {book.author}</p>
+                  <p className="mt-6 max-w-xl text-[1.05rem] leading-relaxed text-ink-soft">
                     {book.description}
                   </p>
-
-                  <div className="mt-auto space-y-2">
-                    <div className="flex flex-wrap items-center gap-2 text-[11px] text-neutral-500">
-                      <span className="inline-flex items-center gap-1">
-                        <Calendar className="size-3" />
-                        <span>{book.publishDate}</span>
-                      </span>
-                      <span className="inline-flex items-center gap-1">
-                        <Bookmark className="size-3" />
-                        <span>{book.pages} pages</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                  <p className="mt-6 text-sm text-muted">
+                    {book.genre} · {book.publishDate} · {book.pages} pages
+                  </p>
+                </Reveal>
               </div>
-            ))}
-          </div>
-        )}
-
-        {!isLoading && !error && topFiveBooks.length === 0 && (
-          <div className="py-16 text-center text-muted-foreground">
-            <p>No top books available at the moment. Please check back later.</p>
-          </div>
-        )}
-      </div>
-    </section>
+            </li>
+          );
+        })}
+      </ol>
+    </>
   );
 }
