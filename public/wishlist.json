@@ -1,5 +1,17 @@
 [
   {
+    "ID": "W13",
+    "image": "/Images/StonerNYRB.jpg",
+    "title": "Stoner",
+    "author": "John Williams",
+    "description": "Williams's quiet novel follows William Stoner, a Missouri farm boy who becomes an English professor, through a modest life of failed love, campus rivalries, and a steady devotion to literature.",
+    "genre": "Novel",
+    "type": "Fiction",
+    "publishDate": "1965",
+    "pages": "278",
+    "currentlyReading": true
+  },
+  {
     "ID": "W2",
     "image": "/Images/GravityAndGrace.jpg",
     "title": "Gravity and Grace",
@@ -57,30 +69,6 @@
     "publishDate": "1851",
     "pages": "635",
     "type": "Fiction",
-    "currentlyReading": false
-  },
-  {
-    "ID": "W10",
-    "image": "/Images/TheIdiot.jpg",
-    "title": "The Idiot",
-    "author": "Fyodor Dostoevsky",
-    "description": "Dostoevsky's novel follows the compassionate Prince Myshkin as his return to Russian society draws him into a destructive web of love, jealousy, betrayal, and moral conflict.",
-    "genre": "Novel",
-    "type": "Fiction",
-    "publishDate": "1869",
-    "pages": "784",
-    "currentlyReading": true
-  },
-  {
-    "ID": "W11",
-    "image": "/Images/ThePearl.jpg",
-    "title": "The Pearl",
-    "author": "John Steinbeck",
-    "description": "Steinbeck's novella follows a pearl diver whose discovery of a priceless pearl promises a better life for his family but instead awakens greed, suspicion, and tragedy.",
-    "genre": "Novella",
-    "type": "Fiction",
-    "publishDate": "1947",
-    "pages": "96",
     "currentlyReading": false
   },
   {

@@ -460,5 +460,27 @@
     "type": "Fiction",
     "publishDate": "1864",
     "pages": "136"
+  },
+  {
+    "ID": "43",
+    "image": "/Images/TheIdiot.jpg",
+    "title": "The Idiot",
+    "author": "Fyodor Dostoevsky",
+    "description": "Dostoevsky's novel follows the compassionate Prince Myshkin as his return to Russian society draws him into a destructive web of love, jealousy, betrayal, and moral conflict.",
+    "genre": "Novel",
+    "type": "Fiction",
+    "publishDate": "1869",
+    "pages": "784"
+  },
+  {
+    "ID": "44",
+    "image": "/Images/ThePearl.jpg",
+    "title": "The Pearl",
+    "author": "John Steinbeck",
+    "description": "Steinbeck's novella follows a pearl diver whose discovery of a priceless pearl promises a better life for his family but instead awakens greed, suspicion, and tragedy.",
+    "genre": "Novella",
+    "type": "Fiction",
+    "publishDate": "1947",
+    "pages": "96"
   }
 ]
