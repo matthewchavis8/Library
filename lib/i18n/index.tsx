@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useSyncExternalStore } from "react";
 import { DICTIONARIES, LOCALES, type Dictionary, type Locale } from "./dictionaries";
 import es from "@/public/i18n/es.json";
 import type { Book } from "@/lib/books";
@@ -108,10 +108,24 @@ export function useT() {
  */
 export function LanguageSync() {
   const locale = useLocale();
+  const shown = useRef<Locale | null>(null);
   useEffect(() => {
     if (locale !== readLocale()) return;
-    document.documentElement.lang = locale;
-    document.documentElement.classList.remove("i18n-pending");
+    const root = document.documentElement;
+    root.lang = locale;
+    root.classList.remove("i18n-pending");
+    // Switching languages: let the new words fade in instead of snapping
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (shown.current && shown.current !== locale && !reduce) {
+      document.body.animate(
+        [
+          { opacity: 0.25, filter: "blur(2px)" },
+          { opacity: 1, filter: "blur(0)" },
+        ],
+        { duration: 420, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
+      );
+    }
+    shown.current = locale;
   }, [locale]);
   return null;
 }

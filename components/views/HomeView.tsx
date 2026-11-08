@@ -6,6 +6,7 @@ import BookCover from "@/components/BookCover";
 import BookGrid from "@/components/BookGrid";
 import HandNote from "@/components/HandNote";
 import Reveal from "@/components/Reveal";
+import ScrollDrift from "@/components/ScrollDrift";
 import { useT } from "@/lib/i18n";
 import type { Book } from "@/lib/books";
 
@@ -24,25 +25,33 @@ export default function HomeView({ stats, reading, recent, topFive }: Props) {
       {/* Hero */}
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-4 pt-12 pb-20 sm:px-6 sm:pt-20 lg:grid-cols-[1.25fr_1fr] lg:gap-10 lg:px-8 lg:pt-24 lg:pb-28">
         <div>
-          <HandNote>{t("home.hello")}</HandNote>
-          <h1 className="mt-6 text-[2.9rem] leading-[1.02] font-normal sm:text-7xl lg:text-[5.25rem]">
-            {t("home.titleStart")}{" "}
-            <em className="text-accent italic">{t("home.titleAccent")}</em>
-          </h1>
-          <p className="mt-7 max-w-lg text-lg leading-relaxed text-ink-soft">
-            {t("home.intro")}
-          </p>
+          <Reveal>
+            <HandNote>{t("home.hello")}</HandNote>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <h1 className="mt-6 text-[2.9rem] leading-[1.02] font-normal sm:text-7xl lg:text-[5.25rem]">
+              {t("home.titleStart")}{" "}
+              <em className="text-accent italic">{t("home.titleAccent")}</em>
+            </h1>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <p className="mt-7 max-w-lg text-lg leading-relaxed text-ink-soft">
+              {t("home.intro")}
+            </p>
+          </Reveal>
 
+          <Reveal delay={0.24}>
           <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-5">
             <Stat value={stats.books} label={t("home.booksFinished")} />
             <Stat value={stats.authors} label={t("home.authors")} />
             <Stat value={number(stats.pages)} label={t("home.pagesTurned")} />
           </dl>
+          </Reveal>
 
-          <div className="mt-11 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <Reveal delay={0.32} className="mt-11 flex flex-wrap items-center gap-x-7 gap-y-4">
             <Link
               href="/Books"
-              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[0.95rem] font-medium text-paper transition-colors hover:bg-accent-deep"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[0.95rem] font-medium text-paper transition-[background-color,scale] duration-200 hover:bg-accent-deep active:scale-[0.96]"
             >
               {t("home.browse")}
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -53,12 +62,12 @@ export default function HomeView({ stats, reading, recent, topFive }: Props) {
             >
               {t("home.seeTop")}
             </Link>
-          </div>
+          </Reveal>
         </div>
 
         {reading && (
           <Reveal delay={0.15} className="relative mx-auto w-full max-w-sm">
-            <Link href="/Wishlist" className="group block">
+            <Link href="/Wishlist" className="group block transition-[scale] duration-300 ease-(--ease-soft) active:scale-[0.98]">
               <div className="relative rounded-[28px] bg-card p-8 pb-7 shadow-[0_1px_0_var(--color-line),0_30px_60px_-30px_rgba(35,28,21,0.35)] ring-1 ring-line sm:p-10 sm:pb-8">
                 <HandNote
                   mark="arrow-down"
@@ -66,9 +75,11 @@ export default function HomeView({ stats, reading, recent, topFive }: Props) {
                 >
                   {t("home.nowReading")}
                 </HandNote>
-                <div className="mx-auto w-44 rotate-2 transition-transform duration-700 ease-(--ease-soft) group-hover:rotate-0 sm:w-52">
-                  <BookCover book={reading} priority sizes="220px" />
-                </div>
+                <ScrollDrift distance={36} tilt={5} className="mx-auto w-44 sm:w-52">
+                  <div className="rotate-2 transition-transform duration-700 ease-(--ease-soft) group-hover:rotate-0">
+                    <BookCover book={reading} priority sizes="220px" />
+                  </div>
+                </ScrollDrift>
                 <div className="mt-8 text-center">
                   <p className="font-serif text-2xl">{reading.title}</p>
                   <p className="mt-1 text-sm text-muted">
@@ -110,7 +121,7 @@ export default function HomeView({ stats, reading, recent, topFive }: Props) {
         <Reveal>
           <Link
             href="/Top5"
-            className="group relative block overflow-hidden rounded-[32px] bg-ink px-7 py-12 text-paper sm:px-14 sm:py-16"
+            className="group relative block overflow-hidden rounded-[32px] bg-ink transition-[scale] duration-300 ease-(--ease-soft) active:scale-[0.985] px-7 py-12 text-paper sm:px-14 sm:py-16"
           >
             <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
               <div>

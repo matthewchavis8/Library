@@ -5,6 +5,7 @@ import BookGrid from "@/components/BookGrid";
 import HandNote from "@/components/HandNote";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
+import ScrollDrift from "@/components/ScrollDrift";
 import { useT } from "@/lib/i18n";
 import type { Book } from "@/lib/books";
 
@@ -20,9 +21,11 @@ export default function UpNextView({ reading, waiting }: Props) {
       {reading && (
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="relative grid items-center gap-10 rounded-[32px] bg-card p-8 ring-1 ring-line sm:grid-cols-[auto_1fr] sm:gap-14 sm:p-12">
-            <div className="mx-auto w-44 -rotate-2 sm:w-52">
-              <BookCover book={reading} priority sizes="220px" />
-            </div>
+            <ScrollDrift distance={36} tilt={-5} className="mx-auto w-44 sm:w-52">
+              <div className="-rotate-2">
+                <BookCover book={reading} priority sizes="220px" />
+              </div>
+            </ScrollDrift>
             <div>
               <HandNote className="text-2xl">{t("upNext.readingNow")}</HandNote>
               <h2 className="mt-5 text-4xl leading-tight sm:text-5xl">

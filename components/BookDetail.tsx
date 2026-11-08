@@ -9,6 +9,7 @@ import HandNote from "./HandNote";
 import { setScrollLocked } from "./SmoothScroll";
 import type { Book } from "@/lib/books";
 import { useT } from "@/lib/i18n";
+import { useIsPhone } from "@/lib/useMedia";
 
 type Props = {
   book: Book | null;
@@ -22,6 +23,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export default function BookDetail({ book, onClose, note }: Props) {
   const drag = useDragControls();
   const { t, genre, description } = useT();
+  const phone = useIsPhone();
 
   useEffect(() => {
     setScrollLocked(!!book);
@@ -45,11 +47,16 @@ export default function BookDetail({ book, onClose, note }: Props) {
             <Dialog.Content asChild forceMount aria-describedby={undefined}>
               <motion.div
                 data-lenis-prevent
-                className="fixed inset-x-0 bottom-0 z-50 max-h-[92dvh] overflow-y-auto rounded-t-[28px] bg-card px-5 pt-3 pb-8 shadow-2xl outline-none sm:inset-auto sm:top-1/2 sm:left-1/2 sm:w-[min(52rem,calc(100vw-3rem))] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-[28px] sm:p-10"
-                initial={{ opacity: 0, y: 48 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 32 }}
-                transition={{ duration: 0.45, ease }}
+                className="fixed inset-x-0 bottom-0 z-50 max-h-[92dvh] overflow-y-auto overscroll-contain rounded-t-[28px] bg-card px-5 pt-3 pb-8 shadow-2xl outline-none sm:inset-auto sm:top-1/2 sm:left-1/2 sm:w-[min(52rem,calc(100vw-3rem))] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-[28px] sm:p-10"
+                // phones: a sheet that springs up from the bottom
+                initial={phone ? { y: "100%" } : { opacity: 0, y: 48 }}
+                animate={phone ? { y: 0 } : { opacity: 1, y: 0 }}
+                exit={phone ? { y: "100%" } : { opacity: 0, y: 32 }}
+                transition={
+                  phone
+                    ? { type: "spring", stiffness: 380, damping: 38, mass: 0.9 }
+                    : { duration: 0.45, ease }
+                }
                 drag="y"
                 dragListener={false}
                 dragControls={drag}
@@ -62,7 +69,7 @@ export default function BookDetail({ book, onClose, note }: Props) {
                 {/* drag handle (phones) */}
                 <div
                   onPointerDown={(e) => drag.start(e)}
-                  className="mx-auto mb-4 flex h-6 w-full cursor-grab touch-none items-center justify-center sm:hidden"
+                  className="-mt-3 mx-auto mb-2 flex h-10 w-full cursor-grab touch-none items-center justify-center sm:hidden"
                 >
                   <span className="h-1.5 w-12 rounded-full bg-line" />
                 </div>

@@ -4,6 +4,7 @@ import BookCover from "@/components/BookCover";
 import HandNote from "@/components/HandNote";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
+import ScrollDrift from "@/components/ScrollDrift";
 import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n";
 import type { Book } from "@/lib/books";
@@ -30,6 +31,7 @@ export default function TopFiveView({ books }: { books: Book[] }) {
                 )}
               >
                 <Reveal className={cn("relative mx-auto w-56 sm:w-64", flip && "md:order-2")}>
+                  <ScrollDrift distance={56} tilt={flip ? -6 : 6}>
                   <div className={cn("transition-transform duration-700", flip ? "rotate-2" : "-rotate-2")}>
                     <BookCover
                       book={book}
@@ -37,6 +39,7 @@ export default function TopFiveView({ books }: { books: Book[] }) {
                       priority={i === 0}
                     />
                   </div>
+                  </ScrollDrift>
                   {i === 0 && (
                     <HandNote
                       mark="arrow-left"

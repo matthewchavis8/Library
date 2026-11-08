@@ -55,7 +55,7 @@ export default function ShelfBrowser({ books }: { books: Book[] }) {
   return (
     <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       {/* Controls: one slim bar that stays put while you scroll */}
-      <div className="sticky top-16 z-30 -mx-4 mb-10 border-b border-line bg-paper/90 px-4 py-2.5 backdrop-blur-md sm:top-20 sm:mx-0 sm:rounded-full sm:border sm:py-2 sm:pr-2 sm:pl-2">
+      <div className="sticky top-16 z-30 -mx-4 mb-10 transition-[translate] duration-500 ease-(--ease-soft) max-sm:in-data-nav-tucked:-translate-y-16 sm:max-md:in-data-nav-tucked:-translate-y-20 border-b border-line bg-paper/90 px-4 py-2.5 backdrop-blur-md sm:top-20 sm:mx-0 sm:rounded-full sm:border sm:py-2 sm:pr-2 sm:pl-2">
         <div className="flex flex-wrap items-center gap-2 sm:flex-nowrap">
           <label className="relative min-w-0 flex-1 sm:w-56 sm:flex-none">
             <span className="sr-only">{t("shelf.searchLabel")}</span>

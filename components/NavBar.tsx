@@ -18,18 +18,34 @@ export default function Navbar() {
   const { t } = useT();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [tucked, setTucked] = useState(false);
 
+  // On phones the header slides away while you scroll down, back when you scroll up
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 12);
+      if (Math.abs(y - lastY) > 6) {
+        setTucked(y > lastY && y > 120);
+        lastY = y;
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lets other sticky bars follow the header up and down
+  useEffect(() => {
+    document.documentElement.toggleAttribute("data-nav-tucked", tucked);
+  }, [tucked]);
+
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 transition-[background-color,box-shadow,backdrop-filter] duration-300",
+        "sticky top-0 z-40 transition-[background-color,box-shadow,backdrop-filter,translate] duration-500 ease-(--ease-soft)",
+        tucked && "max-md:-translate-y-full",
         scrolled
           ? "bg-paper/80 shadow-[0_1px_0_var(--color-line)] backdrop-blur-md"
           : "bg-transparent",

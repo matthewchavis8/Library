@@ -12,6 +12,7 @@ import BookDetail from "./BookDetail";
 import { cn } from "@/lib/utils";
 import type { Book } from "@/lib/books";
 import { useT } from "@/lib/i18n";
+import { useMedia } from "@/lib/useMedia";
 
 type Props = {
   books: Book[];
@@ -33,6 +34,11 @@ export default function BookGrid({
   const [open, setOpen] = useState<Book | null>(null);
   const reduce = useReducedMotion();
   const { t } = useT();
+  // Match the stagger to how many columns are showing, so each row ripples in
+  const sm = useMedia("(min-width: 640px)");
+  const lg = useMedia("(min-width: 1024px)");
+  const xl = useMedia("(min-width: 1280px)");
+  const cols = variant === "row" ? 6 : xl ? 5 : lg ? 4 : sm ? 3 : 2;
 
   return (
     <LayoutGroup id={id}>
@@ -54,7 +60,7 @@ export default function BookGrid({
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, transition: { duration: 0.2 } }}
               viewport={{ once: true, margin: "0px 0px -5% 0px" }}
-              transition={{ duration: 0.6, delay: (i % 5) * 0.06, ease }}
+              transition={{ duration: 0.6, delay: (i % cols) * 0.07, ease }}
               className={cn(
                 variant === "row" && "w-[42vw] max-w-44 shrink-0 snap-start sm:w-auto sm:max-w-none",
               )}
@@ -76,9 +82,11 @@ export default function BookGrid({
 
 function BookTile({ book, onOpen }: { book: Book; onOpen: () => void }) {
   return (
-    <button
+    <motion.button
       type="button"
       onClick={onOpen}
+      whileTap={{ scale: 0.96 }}
+      transition={{ type: "spring", stiffness: 500, damping: 30 }}
       className="group block w-full cursor-pointer text-left"
     >
       <motion.div
@@ -92,6 +100,6 @@ function BookTile({ book, onOpen }: { book: Book; onOpen: () => void }) {
         {book.title}
       </h3>
       <p className="mt-1 truncate text-sm text-muted">{book.author}</p>
-    </button>
+    </motion.button>
   );
 }
