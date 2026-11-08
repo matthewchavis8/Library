@@ -1,8 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion } from "motion/react";
-import { Search, X } from "lucide-react";
+import { ArrowDownUp, Search, X } from "lucide-react";
 import BookGrid from "@/components/BookGrid";
 import { cn } from "@/lib/utils";
 import type { Book } from "@/lib/books";
@@ -55,77 +54,67 @@ export default function ShelfBrowser({ books }: { books: Book[] }) {
 
   return (
     <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      {/* Controls */}
-      <div className="sticky top-16 z-30 -mx-4 mb-10 border-b border-line bg-paper/85 px-4 py-4 backdrop-blur-md sm:top-20 sm:mx-0 sm:rounded-2xl sm:border sm:px-5">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <label className="relative block w-full lg:max-w-xs">
+      {/* Controls: one slim bar that stays put while you scroll */}
+      <div className="sticky top-16 z-30 -mx-4 mb-10 border-b border-line bg-paper/90 px-4 py-2.5 backdrop-blur-md sm:top-20 sm:mx-0 sm:rounded-full sm:border sm:py-2 sm:pr-2 sm:pl-2">
+        <div className="flex flex-wrap items-center gap-2 sm:flex-nowrap">
+          <label className="relative min-w-0 flex-1 sm:w-56 sm:flex-none">
             <span className="sr-only">{t("shelf.searchLabel")}</span>
-            <Search className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted" />
+            <Search className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t("shelf.searchPlaceholder")}
-              className="h-11 w-full rounded-full border border-line bg-card pr-10 pl-11 text-[0.95rem] text-ink placeholder:text-muted focus:border-accent focus:outline-none [&::-webkit-search-cancel-button]:hidden"
+              className="h-9 w-full rounded-full border border-line bg-card pr-8 pl-10 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none [&::-webkit-search-cancel-button]:hidden"
             />
             {query && (
               <button
                 type="button"
                 onClick={() => setQuery("")}
-                className="absolute top-1/2 right-2 flex size-7 -translate-y-1/2 items-center justify-center rounded-full text-muted hover:bg-paper-deep hover:text-ink"
+                className="absolute top-1/2 right-1.5 flex size-6 -translate-y-1/2 items-center justify-center rounded-full text-muted hover:bg-paper-deep hover:text-ink"
               >
-                <X className="size-4" />
+                <X className="size-3.5" />
                 <span className="sr-only">{t("shelf.clearSearch")}</span>
               </button>
             )}
           </label>
 
-          <div className="flex items-center gap-2 text-sm">
-            <span className="text-muted">{t("shelf.sort")}</span>
-            <div className="flex rounded-full border border-line bg-card p-1">
-              {(Object.keys(SORTS) as SortKey[]).map((key) => (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => setSort(key)}
-                  className={cn(
-                    "relative rounded-full px-3.5 py-1.5 transition-colors",
-                    sort === key ? "text-paper" : "text-ink-soft hover:text-ink",
-                  )}
-                >
-                  {sort === key && (
-                    <motion.span
-                      layoutId="sort-pill"
-                      className="absolute inset-0 rounded-full bg-ink"
-                      transition={{ type: "spring", stiffness: 450, damping: 36 }}
-                    />
-                  )}
-                  <span className="relative">{t(SORTS[key].label)}</span>
-                </button>
-              ))}
-            </div>
+          <div className="no-scrollbar order-last -mx-4 flex w-[calc(100%+2rem)] gap-1.5 overflow-x-auto px-4 sm:order-none sm:mx-0 sm:w-auto sm:min-w-0 sm:flex-1 sm:px-0 sm:[mask-image:linear-gradient(90deg,#000_92%,transparent)]">
+            {genres.map(([name, count]) => (
+              <button
+                key={name}
+                type="button"
+                onClick={() => setGenre(name)}
+                className={cn(
+                  "h-9 shrink-0 rounded-full border px-3 text-sm transition-colors",
+                  genre === name
+                    ? "border-accent bg-accent text-paper"
+                    : "border-transparent text-ink-soft hover:border-line hover:bg-card hover:text-ink",
+                )}
+              >
+                {name === "All" ? t("shelf.all") : genreName(name)}
+                <span className={cn("ml-1 text-xs", genre === name ? "text-paper/70" : "text-muted")}>
+                  {count}
+                </span>
+              </button>
+            ))}
           </div>
-        </div>
 
-        <div className="no-scrollbar -mx-4 mt-4 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:px-0">
-          {genres.map(([name, count]) => (
-            <button
-              key={name}
-              type="button"
-              onClick={() => setGenre(name)}
-              className={cn(
-                "shrink-0 rounded-full border px-3.5 py-1.5 text-sm transition-colors",
-                genre === name
-                  ? "border-accent bg-accent text-paper"
-                  : "border-line bg-card text-ink-soft hover:border-ink-soft hover:text-ink",
-              )}
+          <label className="relative shrink-0">
+            <span className="sr-only">{t("shelf.sort")}</span>
+            <ArrowDownUp className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-muted" />
+            <select
+              value={sort}
+              onChange={(e) => setSort(e.target.value as SortKey)}
+              className="h-9 cursor-pointer appearance-none rounded-full border border-line bg-card pr-4 pl-8 text-sm text-ink hover:border-ink-soft focus:border-accent focus:outline-none"
             >
-              {name === "All" ? t("shelf.all") : genreName(name)}
-              <span className={cn("ml-1.5 text-xs", genre === name ? "text-paper/70" : "text-muted")}>
-                {count}
-              </span>
-            </button>
-          ))}
+              {(Object.keys(SORTS) as SortKey[]).map((key) => (
+                <option key={key} value={key}>
+                  {t(SORTS[key].label)}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
       </div>
 
